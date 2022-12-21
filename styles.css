@@ -12,10 +12,23 @@ body {
 }
 
 .title {
-    text-align: center;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
     padding: .3em;
     box-shadow: 0 0 8px 3px 
     #446da9; 
+}
+.title p{
+    padding-top: 1em;
+}
+
+.title p:first-of-type {
+    margin-left: 10px;
+}
+
+.title p:last-of-type {
+    margin-right: 10px;
 }
 
 .question {
