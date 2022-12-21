@@ -15,13 +15,14 @@ body {
     color: #dad5d5;
 }
 
-.container {
+/* header and its content */
+.header-container {
     max-width: 30rem;
     height: 100%;
     margin-top: 8em;
 }
 
-.title {
+.header-content {
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -29,19 +30,18 @@ body {
     box-shadow: 0 0 8px 3px 
     #446da9;
     background-color: black;
-}
-.title p{
     padding-top: 1em;
 }
 
-.title p:first-of-type {
+.header-content p:first-of-type {
     margin-left: 10px;
 }
 
-.title p:last-of-type {
+.header-content p:last-of-type {
     margin-right: 10px;
 }
 
+/* Quiz section */
 .question {
     align-self: center;
     justify-content: center;
@@ -54,14 +54,14 @@ body {
     margin-bottom: 1em !important;
 }
 
-.a-buttons {
+.start-text {
+    letter-spacing: .1em;  
+  }
+
+.answers-buttons {
     width: 100%;
     padding: .8em;
     margin-bottom: .4em !important;
-}
-
-.start-text {
-  letter-spacing: .1em;  
 }
 
 .rules-container {
@@ -69,11 +69,5 @@ body {
     #446da9;
 }
 
-.score {
-    font-family: 'Press Start 2P', cursive;
-}
 
-.timer {
-    font-family: 'Press Start 2P', cursive;
-}
 
