@@ -11,6 +11,13 @@ body {
     margin-top: 4em;
 }
 
+.title {
+    text-align: center;
+    padding: .3em;
+    box-shadow: 0 0 8px 3px 
+    #446da9; 
+}
+
 .question {
     align-self: center;
     justify-content: center;
