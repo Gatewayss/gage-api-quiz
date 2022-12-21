@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
+    font-family: 'Press Start 2P', cursive;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +20,7 @@ body {
     align-items: center;
     padding: .3em;
     box-shadow: 0 0 8px 3px 
-    #446da9; 
+    #446da9;
 }
 .title p{
     padding-top: 1em;
@@ -54,3 +57,10 @@ button {
     border-radius: 10px;
 }
 
+.score {
+    font-family: 'Press Start 2P', cursive;
+}
+
+.timer {
+    font-family: 'Press Start 2P', cursive;
+}
