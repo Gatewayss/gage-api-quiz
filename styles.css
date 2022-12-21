@@ -8,6 +8,7 @@ body {
     margin: 0;
     background-color: black;
     background-image: url("./assets/background_1.png");
+    color: #dad5d5;
 }
 
 .container {
@@ -23,6 +24,7 @@ body {
     padding: .3em;
     box-shadow: 0 0 8px 3px 
     #446da9;
+    background-color: black;
 }
 .title p{
     padding-top: 1em;
@@ -57,6 +59,8 @@ button {
 
 .rules-container {
     border-radius: 10px;
+    box-shadow: 0 0 8px 3px 
+    #446da9;
 }
 
 .score {
