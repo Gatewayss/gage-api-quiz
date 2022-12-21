@@ -6,6 +6,8 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
+    background-color: black;
+    background-image: url("./assets/background_1.png");
 }
 
 .container {
