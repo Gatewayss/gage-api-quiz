@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Press Start 2P', cursive;
     display: flex;
@@ -43,14 +47,17 @@ body {
     justify-content: center;
 }
 
-button {
-    margin-bottom: .4em !important;
-    border-radius: 10px !important;
-}
-
 .start-button {
     margin-top: 1.3em !important;
     width: 100%;
+    padding: .8em;
+    margin-bottom: 1em !important;
+}
+
+.a-buttons {
+    width: 100%;
+    padding: .8em;
+    margin-bottom: .4em !important;
 }
 
 .start-text {
@@ -58,7 +65,6 @@ button {
 }
 
 .rules-container {
-    border-radius: 10px;
     box-shadow: 0 0 8px 3px 
     #446da9;
 }
@@ -70,3 +76,4 @@ button {
 .timer {
     font-family: 'Press Start 2P', cursive;
 }
+
