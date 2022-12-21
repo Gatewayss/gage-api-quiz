@@ -50,11 +50,10 @@ body {
     margin-right: 10px;
 }
 
-/* Quiz section */
-.question {
-    align-self: center;
-    justify-content: center;
-    font-size: 1.5em;
+/* welcome section */
+.rules-container {
+    box-shadow: 0 0 8px 3px 
+    var(--main-blue);
 }
 
 .start-button {
@@ -67,6 +66,13 @@ body {
 .start-text {
     letter-spacing: .1em;  
   }
+
+/* Quiz section */
+.question {
+    align-self: center;
+    justify-content: center;
+    font-size: 1.5em;
+}
 
 .answers-buttons {
     width: 100%;
@@ -87,10 +93,7 @@ body {
     background-color: var(--pink-hover);
 }
 
-.rules-container {
-    box-shadow: 0 0 8px 3px 
-    var(--main-blue);
-}
+
 
 
 
