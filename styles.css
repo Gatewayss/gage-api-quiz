@@ -52,6 +52,7 @@ body {
     width: 100%;
     padding: .8em;
     margin-bottom: 1em !important;
+    background-color: #446da9;
 }
 
 .start-text {
@@ -62,6 +63,18 @@ body {
     width: 100%;
     padding: .8em;
     margin-bottom: .4em !important;
+    background-color: #446da9;
+}
+
+.button-style {
+    border-top: 2px inset rgb(255, 255, 255); 
+    border-left: 8px inset rgba(0, 0, 0, 0.321);
+    border-bottom: 8px inset rgba(0, 0, 0, 0.495);
+	border-right: 8px inset rgba(255, 255, 255, 0.218);
+}
+
+.button-style:hover {
+    background-color: #799ed6;
 }
 
 .rules-container {
