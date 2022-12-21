@@ -98,3 +98,34 @@ body {
 }
 
 
+/* 485 and 933 break point needs to be modified */
+
+@media only screen and (max-width: 933px) {
+    h1 {
+        text-align: center;
+    }
+    .score {
+        text-align: center; 
+    }
+    .timer {
+        text-align: center;
+    }
+}
+    
+@media only screen and (max-width: 430px) {
+    h1 {
+        font-size: 15px; 
+    }
+    .score {
+        font-size: 10px;
+    }
+    .timer {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    h1 {
+        
+    }
+}

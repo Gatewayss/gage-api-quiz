@@ -11,7 +11,6 @@ function startQuiz() {
     quiz.setAttribute('style', "visibility: visible;")
   }
 
-/* 485 break point needs to be modified */
 
 /* TODO: 
 create questions and answers,
