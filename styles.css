@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+:root {
+    --main-blue: #446da9;
+    --white: #dad5d5;
+    --red: #983311;
+    --green: #55aa43;
+    --pink: #ca58ab;
+    --pink-hover: #f89cdf;
+  }
+
 * {
     box-sizing: border-box;
 }
@@ -12,7 +21,7 @@ body {
     margin: 0;
     background-color: black;
     background-image: url("./assets/background_1.png");
-    color: #dad5d5;
+    color: var(--white);
 }
 
 /* header and its content */
@@ -28,7 +37,7 @@ body {
     align-items: center;
     padding: .3em;
     box-shadow: 0 0 8px 3px 
-    #446da9;
+    var(--main-blue);
     background-color: black;
     padding-top: 1em;
 }
@@ -53,7 +62,6 @@ body {
     width: 100%;
     padding: .8em;
     margin-bottom: 1em !important;
-    background-color: #446da9;
 }
 
 .start-text {
@@ -64,23 +72,24 @@ body {
     width: 100%;
     padding: .8em;
     margin-bottom: .4em !important;
-    background-color: #446da9;
 }
 
 .button-style {
-    border-top: 2px inset rgb(255, 255, 255); 
+    color: var(--white);
+    background-color: var(--pink);
+    border-top: 2px inset #f3a3c6dc; 
     border-left: 8px inset rgba(0, 0, 0, 0.321);
-    border-bottom: 8px inset rgba(0, 0, 0, 0.495);
-	border-right: 8px inset rgba(255, 255, 255, 0.218);
+    border-bottom: 8px inset rgba(0, 0, 0, 0.523);
+	border-right: 8px inset rgba(255, 255, 255, 0.144);
 }
 
 .button-style:hover {
-    background-color: #799ed6;
+    background-color: var(--pink-hover);
 }
 
 .rules-container {
     box-shadow: 0 0 8px 3px 
-    #446da9;
+    var(--main-blue);
 }
 
 
