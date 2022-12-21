@@ -15,3 +15,8 @@ body {
     align-self: center;
     justify-content: center;
 }
+
+button {
+    margin-bottom: .4em !important;
+    border-radius: 10px !important;
+}
