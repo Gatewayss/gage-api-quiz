@@ -3,8 +3,11 @@ const welcomeBox = document.getElementById("welcomeBox")
 const quiz = document.getElementById("quiz")
 console.log(welcomeBox);
 
+
 startBtn.addEventListener("click", startQuiz)
 
 function startQuiz() {
     welcomeBox.style.display = 'none';
+    quiz.setAttribute('style', "visibility: visible;")
   }
+
