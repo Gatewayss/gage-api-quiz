@@ -54,6 +54,7 @@ body {
 .rules-container {
     box-shadow: 0 0 8px 3px 
     var(--main-blue);
+    margin-top: 2em;
 }
 
 .start-button {
@@ -68,6 +69,9 @@ body {
   }
 
 /* Quiz section */
+.quiz {
+    margin-top: 2em;
+}
 .question {
     align-self: center;
     justify-content: center;
