@@ -11,6 +11,22 @@ function startQuiz() {
     quiz.setAttribute('style', "visibility: visible;")
   }
 
+    let questions = [
+        {
+        questionOne: 1,
+        question:  "Which TV show has the largest trans cast in history",
+        options: ["Pose", "Euphoria", "Queer eye", "Grey's anatomy "],
+        answer1: 0
+        },
+        {
+        questionTwo: 2,
+        question: "Who designed the first transgender flag?",
+        options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms", "Stormé DeLarverie"],
+        answer2: 2
+        }
+  ]
+  
+
 
 /* TODO: 
 create questions and answers,
