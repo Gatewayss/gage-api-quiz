@@ -2,6 +2,7 @@
 
 :root {
     --main-blue: #446da9;
+    --blue-hover: #6e92c8;
     --white: #dad5d5;
     --red: #983311;
     --green: #55aa43;
@@ -93,6 +94,27 @@ body {
 	border-right: 8px inset rgba(255, 255, 255, 0.144);
 }
 
+.nav-container {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav-buttons {
+    background-color: var(--main-blue);
+    color: var(--white);
+    border-top: 2px inset #f1f1f8dc; 
+    border-left: 8px inset rgba(0, 0, 0, 0.321);
+    border-bottom: 8px inset rgba(0, 0, 0, 0.523);
+	border-right: 8px inset rgba(255, 255, 255, 0.144);
+    padding: .5em 1em;
+}
+
+.nav-buttons:hover {
+    background-color: var(--blue-hover);
+}
+
 .button-style:hover {
     background-color: var(--pink-hover);
 }
@@ -124,8 +146,8 @@ body {
     }
 }
 
-@media only screen and (max-width: 630px) {
+/*@media only screen and (max-width: 630px) {
     h1 {
         
     }
-}
+}*/
