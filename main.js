@@ -3,9 +3,10 @@ const welcomeBox = document.getElementById("welcomeBox")
 const quiz = document.getElementById("quiz")
 const counter = document.getElementById("counter")
 const loser = document.getElementById("loser")
-let count = 3;
+const quitBtn = document.getElementById("quit-button")
 
-startBtn.addEventListener("click", startQuiz)
+let count = 5;
+
 
 function startQuiz() {
     startCounter()
@@ -38,18 +39,16 @@ function userLost() {
 
 let questions = [
     {
-        questionOne: 1,
         question: "Which TV show has the largest trans cast in history",
         options: ["Pose", "Euphoria", "Queer eye", "Grey's anatomy "],
-        answer1: 0
+        answer: "Pose"
     },
     {
-        questionTwo: 2,
         question: "Who designed the first transgender flag?",
         options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms", "Stormé DeLarverie"],
-        answer2: 2
+        answer: "Monica Helms"
     }
-]
+];
 
 
 
