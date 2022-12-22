@@ -129,8 +129,14 @@ body {
 
 .loser-text {
     text-align: center;
-    padding: 1em;
+    padding: 1em 1em 0 1em;
     line-height: 2em;
+}
+
+iframe {
+    height: 220px;
+    width: 240px;
+    padding-bottom: 1.5em;
 }
 
 /* 485 and 933 break point needs to be modified */

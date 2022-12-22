@@ -3,7 +3,7 @@ const welcomeBox = document.getElementById("welcomeBox")
 const quiz = document.getElementById("quiz")
 const counter = document.getElementById("counter")
 
-let count = 61;
+let count = 3;
 
 startBtn.addEventListener("click", startQuiz)
 
