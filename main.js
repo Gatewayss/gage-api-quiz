@@ -4,9 +4,13 @@ const quiz = document.getElementById("quiz")
 const counter = document.getElementById("counter")
 const loser = document.getElementById("loser")
 const quitBtn = document.getElementById("quit-button")
+const question = document.getElementById("question")
+const aBtn = document.getElementsByClassName("answers-buttons")
 
-let count = 5;
+console.log(aBtn);
+let count = 60;
 
+startBtn.addEventListener("click", startQuiz)
 
 function startQuiz() {
     startCounter()
@@ -14,7 +18,18 @@ function startQuiz() {
     welcomeBox.classList.add('hidden')
     quiz.classList.remove('hidden');
     quiz.classList.add('visible');
+    renderQuestion()
 }
+
+function renderQuestion() {
+    let newQuestion = questionArray[currentQuestionIndex]
+    question.textContent = newQuestion.question
+    for (let i = 0; i < 1; i++)
+    newQuestion.options.forEach(function(options) {
+    aBtn.textContent += options[i]
+    console.log(options);
+    }
+)}
 
 function startCounter() {
     let timeLeft = setInterval(function () {
@@ -37,7 +52,8 @@ function userLost() {
     loser.classList.remove('hidden')
 }
 
-let questions = [
+let currentQuestionIndex = 0
+let questionArray = [
     {
         question: "Which TV show has the largest trans cast in history",
         options: ["Pose", "Euphoria", "Queer eye", "Grey's anatomy "],
