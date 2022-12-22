@@ -2,7 +2,6 @@ const startBtn = document.querySelector("button")
 const welcomeBox = document.getElementById("welcomeBox")
 const quiz = document.getElementById("quiz")
 const counter = document.getElementById("counter")
-console.log(counter);
 
 let count = 61;
 
@@ -12,33 +11,40 @@ function startQuiz() {
     startCounter()
     welcomeBox.style.display = 'none';
     quiz.setAttribute('style', "visibility: visible;")
-  }
+}
 
-  function startCounter() {
-    let timeLeft = setInterval(function() {
+function startCounter() {
+    let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
         if (count === 0) {
             clearInterval(timeLeft)
+            userLost()
         }
-    },1000);
-  }
+    }, 1000);
+}
 
-    let questions = [
-        {
+function userLost() {
+    quiz.style.display = 'none'
+    loser.setAttribute("style", "visibility: visible")
+    loser.style.display = 'visible'
+}
+
+let questions = [
+    {
         questionOne: 1,
-        question:  "Which TV show has the largest trans cast in history",
+        question: "Which TV show has the largest trans cast in history",
         options: ["Pose", "Euphoria", "Queer eye", "Grey's anatomy "],
         answer1: 0
-        },
-        {
+    },
+    {
         questionTwo: 2,
         question: "Who designed the first transgender flag?",
         options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms", "Stormé DeLarverie"],
         answer2: 2
-        }
-  ]
-  
+    }
+]
+
 
 
 /* TODO: 
