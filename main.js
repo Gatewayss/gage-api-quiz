@@ -1,14 +1,27 @@
 const startBtn = document.querySelector("button")
 const welcomeBox = document.getElementById("welcomeBox")
 const quiz = document.getElementById("quiz")
-console.log(welcomeBox);
+const counter = document.getElementById("counter")
+console.log(counter);
 
+let count = 61;
 
 startBtn.addEventListener("click", startQuiz)
 
 function startQuiz() {
+    startCounter()
     welcomeBox.style.display = 'none';
     quiz.setAttribute('style', "visibility: visible;")
+  }
+
+  function startCounter() {
+    let timeLeft = setInterval(function() {
+        count--;
+        counter.textContent = count
+        if (count === 0) {
+            clearInterval(timeLeft)
+        }
+    },1000);
   }
 
     let questions = [
