@@ -42,17 +42,18 @@
             </div>
 
         <!--user lost section-->
-        <div class="loser-container hidden" id="loser">
+        <div class="game-ending hidden" id="loser">
             <h2 class="lost-title">YOU LOST!</h2>
-            <p class="loser-text">click the quit button to try again!</p>
+            <p class="game-text">click the quit button to try again!</p>
             <img src="./assets/gifs/skull.gif" />
             <button type="button" class="nav-buttons quit-button" >QUIT</button>
         </div>
 
-        <div class="winner-container visible" id="winner-container">
-            <h2>YOU WON!</h2>
+
+        <div class="game-ending visible" id="winner-container">
+            <h2 class="winner-title">YOU WON!</h2>
             <p>your score is <span id="score">0</span></p>
-            <p>record your new score below!</p>
+            <p class="game-text">record your new score below!</p>
             <img src="./assets/gifs/hotdog.gif"></img>
             <input type="text" placeholder="type your name here">
             <button type="submit">submit</button>

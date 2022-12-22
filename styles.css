@@ -118,7 +118,7 @@ body {
 }
 
 /* user lost page */
-.loser-container {
+.game-ending {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -127,20 +127,18 @@ body {
     padding: 2em;
 }
 
-.loser-text {
+.game-text {
     text-align: center;
     padding: 1em 1em 0 1em;
     line-height: 2em;
 }
 
-iframe {
-    height: 220px;
-    width: 240px;
-    padding-bottom: 1.5em;
-}
-
 .lost-title {
     color: red;
+}
+
+.winner-title {
+    color: var(--blue-hover);
 }
 
 /* css for display and hiding pages */
