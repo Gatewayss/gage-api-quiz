@@ -4,7 +4,6 @@
     --main-blue: #446da9;
     --blue-hover: #6e92c8;
     --white: #dad5d5;
-    --red: #983311;
     --green: #55aa43;
     --pink: #ca58ab;
     --pink-hover: #f89cdf;
@@ -137,6 +136,10 @@ iframe {
     height: 220px;
     width: 240px;
     padding-bottom: 1.5em;
+}
+
+.lost-title {
+    color: red;
 }
 
 /* 485 and 933 break point needs to be modified */
