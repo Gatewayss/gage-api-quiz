@@ -23,6 +23,7 @@ body {
     background-color: black;
     background-image: url("./assets/background_1.png");
     color: var(--white);
+    height: 100%;
 }
 
 /* header and its content */
@@ -70,9 +71,6 @@ body {
   }
 
 /* Quiz section */
-.quiz {
-    margin-top: 2em;
-}
 .question {
     align-self: center;
     justify-content: center;
@@ -82,7 +80,7 @@ body {
 .answers-buttons {
     width: 100%;
     padding: .8em;
-    margin-bottom: .4em !important;
+    margin: .4em 0 !important;
 }
 
 .button-style {
@@ -99,6 +97,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-bottom: 2em;
 }
 
 .nav-buttons {
@@ -126,6 +125,9 @@ body {
     h1 {
         text-align: center;
     }
+    .quiz {
+        margin-top: 2em;
+    }
     .score {
         text-align: center; 
     }
@@ -137,6 +139,9 @@ body {
 @media only screen and (max-width: 430px) {
     h1 {
         font-size: 15px; 
+    }
+    .quiz-container {
+        margin-top: none;
     }
     .score {
         font-size: 10px;
