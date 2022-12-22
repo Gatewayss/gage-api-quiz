@@ -17,6 +17,9 @@ function startCounter() {
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
+        if (count === 10) {
+            counter.style.color = "red"
+        }
         if (count === 0) {
             clearInterval(timeLeft)
             userLost()
