@@ -117,7 +117,7 @@ body {
     background-color: var(--pink-hover);
 }
 
-/* user lost page */
+/* user lost and won page */
 .game-ending {
     display: flex;
     flex-wrap: wrap;
@@ -127,7 +127,7 @@ body {
     padding: 2em;
 }
 
-.game-text {
+.loser-text {
     text-align: center;
     padding: 1em 1em 0 1em;
     line-height: 2em;
@@ -142,8 +142,37 @@ body {
     color: var(--blue-hover);
 }
 
+.winner-text {
+    text-align: center; 
+}
+
+.winner-score-text {
+    margin: 0 0 8px;
+}
+
+/* form section */
+
+input {
+    padding: .5em; 
+    margin-top: 1em;
+}
+
+#score-form {
+   padding-top: .8em;
+}
+
+button[type="submit"] {
+    margin-top: 1em;
+}
+
+/* gif stylings */
 .skull {
     padding-left: 2.3em;
+}
+
+.hot-dog {
+    height: 200px;
+    width: auto;
 }
 /* css for display and hiding pages */
 
