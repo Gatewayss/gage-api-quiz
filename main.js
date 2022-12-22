@@ -2,15 +2,17 @@ const startBtn = document.querySelector("button")
 const welcomeBox = document.getElementById("welcomeBox")
 const quiz = document.getElementById("quiz")
 const counter = document.getElementById("counter")
-
+const loser = document.getElementById("loser")
 let count = 61;
 
 startBtn.addEventListener("click", startQuiz)
 
 function startQuiz() {
     startCounter()
-    welcomeBox.style.display = 'none';
-    quiz.setAttribute('style', "visibility: visible;")
+    welcomeBox.classList.remove('visible')
+    welcomeBox.classList.add('hidden')
+    quiz.classList.remove('hidden');
+    quiz.classList.add('visible');
 }
 
 function startCounter() {
@@ -29,8 +31,9 @@ function startCounter() {
 
 function userLost() {
     quiz.style.display = 'none'
-    loser.setAttribute("style", "visibility: visible")
-    loser.style.display = 'visible'
+    quiz.classList.add('visible');
+    loser.classList.add('visible')
+    loser.classList.remove('hidden')
 }
 
 let questions = [

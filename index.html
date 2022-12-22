@@ -19,13 +19,13 @@
         </div>
         
     <!-- start page -->
-    <div class="rules-container border border-info p-3 mb-2 border-opacity-75" id="welcomeBox" style="display: visible">
+    <div class="rules-container border border-info p-3 mb-2 border-opacity-75 visible" id="welcomeBox">
         <p>Hello this is a timed quiz Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aspernatur illum tempora consequuntur! Aliquid voluptates magni aliquam suscipit? Dolores deserunt sunt cum voluptas, reprehenderit in, quibusdam expedita ut qui reiciendis autem! press start to begin</p>
         <button type="button" class="start-button button-style"><span class="start-text" id="start-btn">START</span></button>
     </div>
 
     <!--Quiz section-->
-        <form class="list-group quiz" id="quiz" style="visibility: hidden">
+        <div class="list-group quiz hidden" id="quiz">
         <p class="question">question</p>
             <div class="btn-group-vertical" role="group" aria-label="Basic example">
                 <button type="button" class="answers-buttons button-style">1</button>
@@ -34,13 +34,13 @@
                 <button type="button" class="answers-buttons button-style">4</button>
               </div>
               
-              <div class="btn-group nav-container" role="group" aria-label="Basic example" style="display: visible" id="nav-container">
+              <div class="btn-group nav-container" role="group" aria-label="Basic example" id="nav-container">
                 <button type="button" class="nav-buttons">BACK</button>
                 <button type="button" class="nav-buttons quit-button" >QUIT</button>
                 <button type="button" class="nav-buttons">NEXT</button>
               </div>
-            </form>
-        <div class="loser-container" id="loser" style="visibility: hidden">
+            </div>
+        <div class="loser-container hidden" id="loser">
             <h2 class="lost-title">YOU LOST!</h2>
             <p class="loser-text">click the quit button to try again!</p>
             <iframe src="https://gifer.com/embed/4EB7"></iframe>

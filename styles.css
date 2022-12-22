@@ -142,6 +142,14 @@ iframe {
     color: red;
 }
 
+.hidden {
+    display: none;
+  }
+
+.visible {
+    visibility: visible;
+}
+
 /* 485 and 933 break point needs to be modified */
 
 @media only screen and (max-width: 933px) {
