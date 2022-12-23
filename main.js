@@ -5,27 +5,41 @@ const counter = document.getElementById("counter")
 const loser = document.getElementById("loser")
 const quitBtn = document.getElementById("quit-button")
 const question = document.getElementById("question")
+const exitBtn = document.getElementById("exit-button")
 
-console.log(btn1)
+let counterBegin;
+let timeLeft;
+let count = 0;
+let currentQuestionIndex = 0
 
-let count = 60;
-
+exitBtn.addEventListener("click", () => {
+    loser.classList.add("hidden")
+    loser.classList.remove("visible")
+    welcomeBox.classList.remove('hidden')
+    welcomeBox.classList.add('visible')
+})
 
 startBtn.addEventListener("click", startQuiz)
+quitBtn.addEventListener("click", () => {
+    return counterBegin = false
+});
+
 
 function startQuiz() {
-    startCounter()
+    counterBegin = true
+    if (counterBegin === true) {
+        startCounter() 
+    } 
     welcomeBox.classList.remove('visible')
     welcomeBox.classList.add('hidden')
     quiz.classList.remove('hidden');
     quiz.classList.add('visible');
     renderQuestion()
-}
+}  
 
 /* new question take the current index of questions and displays
 curButton creates the id fo the answer button and then increments it 
 by the length of the array with for each */
-
 function renderQuestion() {
     let newQuestion = questionArray[currentQuestionIndex]
     question.textContent = newQuestion.question
@@ -42,6 +56,7 @@ function renderQuestion() {
 }
 
 function startCounter() {
+    count = 5
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
@@ -51,6 +66,15 @@ function startCounter() {
         if (count === 0) {
             clearInterval(timeLeft)
             userLost()
+        } 
+        if (counterBegin === false) {
+            counter.textContent = 0;
+            welcomeBox.classList.remove('hidden')
+            welcomeBox.classList.add('visible')
+            quiz.classList.remove('visible');
+            quiz.classList.add('hidden');
+            loser.classList.add("hidden")
+            return clearInterval(timeLeft)
         }
     }, 1000);
 }
@@ -62,7 +86,7 @@ function userLost() {
     loser.classList.remove('hidden')
 }
 
-let currentQuestionIndex = 0
+
 let questionArray = [
     {
         question: "Which TV show has the largest trans cast in history",
