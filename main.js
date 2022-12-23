@@ -22,10 +22,10 @@ let currentQuestionIndex = 0;
 nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
     renderQuestion()
+    questionButtons.forEach(btn => btn.style.backgroundColor = "#ca58ab");
     console.log(currentQuestionIndex);
 }
 )
-
 
 exitBtn.addEventListener("click", () => {
     loser.classList.add("hidden")
