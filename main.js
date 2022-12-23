@@ -5,10 +5,7 @@ const counter = document.getElementById("counter")
 const loser = document.getElementById("loser")
 const quitBtn = document.getElementById("quit-button")
 const question = document.getElementById("question")
-const btn1 = document.getElementById("btn1")
-const btn2 = document.getElementById("btn2")
-const btn3 = document.getElementById("btn3")
-const btn4 = document.getElementById("btn4")
+
 console.log(btn1)
 
 let count = 60;
@@ -24,6 +21,10 @@ function startQuiz() {
     quiz.classList.add('visible');
     renderQuestion()
 }
+
+/* new question take the current index of questions and displays
+curButton creates the id fo the answer button and then increments it 
+by the length of the array with for each */
 
 function renderQuestion() {
     let newQuestion = questionArray[currentQuestionIndex]
