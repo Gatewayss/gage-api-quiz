@@ -6,7 +6,13 @@ const loser = document.getElementById("loser")
 const quitBtn = document.getElementById("quit-button")
 const question = document.getElementById("question")
 const exitBtn = document.getElementById("exit-button")
+const score = document.getElementById("score")
+const questionButtons = [btn1, btn2, btn3, btn4]
+questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 
+let newQuestion;
+let correct;
+let currentScore = 0;
 let counterBegin;
 let timeLeft;
 let count = 0;
@@ -24,28 +30,40 @@ quitBtn.addEventListener("click", () => {
     return counterBegin = false
 });
 
+function answerCheck(event) {
+   correct = newQuestion.answer
+    console.log(correct);
+    if (event.target.textContent === correct) {
+        currentScore++
+        event.target.style.backgroundColor = "green"
+        score.textContent = currentScore;
+    } else if (event.target.textContent !== correct) {
+        event.target.style.backgroundColor = "red"
+        console.log("wrong");
+    }
+}
 
 function startQuiz() {
     counterBegin = true
     if (counterBegin === true) {
-        startCounter() 
-    } 
+        startCounter()
+    }
     welcomeBox.classList.remove('visible')
     welcomeBox.classList.add('hidden')
     quiz.classList.remove('hidden');
     quiz.classList.add('visible');
     renderQuestion()
-}  
+}
 
 /* new question take the current index of questions and displays
 curButton creates the id fo the answer button and then increments it 
 by the length of the array with for each */
 function renderQuestion() {
-    let newQuestion = questionArray[currentQuestionIndex]
+    newQuestion = questionArray[currentQuestionIndex]
     question.textContent = newQuestion.question
     let idx = 1;
     let curButton;
-    var newButton;
+    let newButton;
     newQuestion.options.forEach(function (options) {
         curButton = "btn" + idx;
         newButton = document.getElementById(curButton);
@@ -53,6 +71,7 @@ function renderQuestion() {
         idx++;
     }
     )
+    return newQuestion
 }
 
 function startCounter() {
@@ -66,7 +85,7 @@ function startCounter() {
         if (count === 0) {
             clearInterval(timeLeft)
             userLost()
-        } 
+        }
         if (counterBegin === false) {
             counter.textContent = 0;
             welcomeBox.classList.remove('hidden')
