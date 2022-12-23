@@ -6,6 +6,7 @@ const loser = document.getElementById("loser")
 const quitBtn = document.getElementById("quit-button")
 const question = document.getElementById("question")
 const exitBtn = document.getElementById("exit-button")
+const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
 const questionButtons = [btn1, btn2, btn3, btn4]
 questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
@@ -16,7 +17,15 @@ let currentScore = 0;
 let counterBegin;
 let timeLeft;
 let count = 0;
-let currentQuestionIndex = 0
+let currentQuestionIndex = 0;
+
+nextBtn.addEventListener("click", () => {
+    currentQuestionIndex++;
+    renderQuestion()
+    console.log(currentQuestionIndex);
+}
+)
+
 
 exitBtn.addEventListener("click", () => {
     loser.classList.add("hidden")
