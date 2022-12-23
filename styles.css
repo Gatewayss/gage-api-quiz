@@ -138,6 +138,10 @@ body {
     color: red;
 }
 
+#exit-button {
+    background-color: red;
+}
+
 .winner-title {
     color: var(--blue-hover);
 }

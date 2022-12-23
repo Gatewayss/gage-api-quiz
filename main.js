@@ -56,7 +56,7 @@ function renderQuestion() {
 }
 
 function startCounter() {
-    count = 5
+    count = 60
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
