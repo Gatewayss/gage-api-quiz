@@ -5,10 +5,14 @@ const counter = document.getElementById("counter")
 const loser = document.getElementById("loser")
 const quitBtn = document.getElementById("quit-button")
 const question = document.getElementById("question")
-const aBtn = document.getElementsByClassName("answers-buttons")
+const btn1 = document.getElementById("btn1")
+const btn2 = document.getElementById("btn2")
+const btn3 = document.getElementById("btn3")
+const btn4 = document.getElementById("btn4")
+console.log(btn1)
 
-console.log(aBtn);
 let count = 60;
+
 
 startBtn.addEventListener("click", startQuiz)
 
@@ -24,12 +28,17 @@ function startQuiz() {
 function renderQuestion() {
     let newQuestion = questionArray[currentQuestionIndex]
     question.textContent = newQuestion.question
-    for (let i = 0; i < 1; i++)
-    newQuestion.options.forEach(function(options) {
-    aBtn.textContent += options[i]
-    console.log(options);
+    let idx = 1;
+    let curButton;
+    var newButton;
+    newQuestion.options.forEach(function (options) {
+        curButton = "btn" + idx;
+        newButton = document.getElementById(curButton);
+        newButton.textContent = options;
+        idx++;
     }
-)}
+    )
+}
 
 function startCounter() {
     let timeLeft = setInterval(function () {
@@ -65,7 +74,6 @@ let questionArray = [
         answer: "Monica Helms"
     }
 ];
-
 
 
 /* TODO: 
