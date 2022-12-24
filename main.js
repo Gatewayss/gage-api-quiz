@@ -117,14 +117,29 @@ function userLost() {
 
 let questionArray = [
     {
-        question: "Which TV show has the largest trans cast in history",
+        question: "which TV show has the largest trans cast in history?",
         options: ["Pose", "Euphoria", "Queer eye", "Grey's anatomy "],
         answer: "Pose"
     },
     {
-        question: "Who designed the first transgender flag?",
+        question: "who designed the first transgender pride flag?",
         options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms", "Stormé DeLarverie"],
         answer: "Monica Helms"
+    },
+    {
+        question: "america’s first transgender statue celebrates and honors which activists from the Stonewall Riots?",
+        options: ["Marsha P Johnson", "Sylvia Rivera","name", "Marsha P Johnson and Sylvia Rivera"],
+        answer: "Marsha P Johnson and Sylvia Rivera"
+    },
+    {
+        question: "which city in the united states was the first to pass trans-inclusive legislation?",
+        options: ["minneapolis", "san francisco", "portland", "miami"],
+        answer: "minneapolis"
+    },
+    {
+        question: "true or false: a transgender man pioneered the use of x-ray photography to detect tuberculosis.",
+        options: ["yes", "no"],
+        answer: "yes"
     }
 ];
 
