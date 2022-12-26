@@ -28,6 +28,8 @@ quitBtn.addEventListener("click", () => {
     counterBegun = false;
     questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
     questionButtons.forEach(btn => btn.classList.remove("wrong-choice"))
+    currentScore = 0;
+    score.textContent = currentScore;
     console.log(currentQuestionIndex);
 });
 // next button for the next questions
@@ -41,6 +43,8 @@ nextBtn.addEventListener("click", () => {
 )
 // exit button to bring you back to homepage 
 exitBtn.addEventListener("click", () => {
+    currentScore = 0;
+    score.textContent = currentScore;
     currentQuestionIndex = 0;
     counterBegun = false;
     loser.classList.add("hidden")
