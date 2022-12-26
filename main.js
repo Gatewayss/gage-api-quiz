@@ -8,6 +8,8 @@ const question = document.getElementById("question")
 const exitBtn = document.getElementById("exit-button")
 const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
+const correctColor = document.getElementsByClassName("correct-choice")
+console.log("correct-choice");
 const questionButtons = [btn1, btn2, btn3, btn4]
 questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 
@@ -19,10 +21,13 @@ let timeLeft;
 let count = 0;
 let currentQuestionIndex = 0;
 
+
+
 nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
     renderQuestion()
-    questionButtons.forEach(btn => btn.style.backgroundColor = "#ca58ab");
+    questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
+    questionButtons.forEach(btn => btn.classList.remove("wrong-choice"))
     console.log(currentQuestionIndex);
 }
 )
@@ -44,12 +49,16 @@ function answerCheck(event) {
     console.log(correct);
     if (event.target.textContent === correct) {
         currentScore++
-        event.target.style.backgroundColor = "green"
+        event.target.classList.add("correct-choice")
         score.textContent = currentScore;
+        event.target.disabled = true;
     } else if (event.target.textContent !== correct) {
-        event.target.style.backgroundColor = "red"
-        console.log("wrong");
+        event.target.classList.add("wrong-choice") 
     }
+}
+
+function restartQuestions() {
+    questionButtons.forEach(btn => btn.disabled = false);
 }
 
 function startQuiz() {
@@ -68,6 +77,7 @@ function startQuiz() {
 curButton creates the id fo the answer button and then increments it 
 by the length of the array with for each */
 function renderQuestion() {
+    restartQuestions() 
     newQuestion = questionArray[currentQuestionIndex]
     question.textContent = newQuestion.question
     let idx = 1;

@@ -80,6 +80,7 @@ body {
     width: 100%;
     padding: .8em;
     margin: .4em 0 !important;
+    cursor: pointer;
 }
 
 .button-style {
@@ -154,6 +155,13 @@ body {
     margin: 0 0 8px;
 }
 
+.correct-choice {
+    background-color: var(--green);
+}
+
+.wrong-choice {
+    background-color: red;
+}
 /* form section */
 
 input {
