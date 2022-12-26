@@ -177,6 +177,10 @@ button[type="submit"] {
     margin-top: 1em;
 }
 
+#exit-button:hover {
+    background-color: rgb(241, 93, 93);
+}
+
 /* gif stylings */
 .skull {
     padding-left: 2.3em;
