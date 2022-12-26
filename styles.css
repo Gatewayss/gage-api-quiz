@@ -156,11 +156,11 @@ body {
 }
 
 .correct-choice {
-    background-color: var(--green);
+    background-color: var(--green) !important;
 }
 
 .wrong-choice {
-    background-color: red;
+    background-color: red !important;
 }
 /* form section */
 
