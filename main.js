@@ -26,6 +26,9 @@ questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 quitBtn.addEventListener("click", () => {
     currentQuestionIndex = 0;
     counterBegun = false;
+    questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
+    questionButtons.forEach(btn => btn.classList.remove("wrong-choice"))
+    console.log(currentQuestionIndex);
 });
 // next button for the next questions
 nextBtn.addEventListener("click", () => {
