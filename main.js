@@ -8,21 +8,26 @@ const question = document.getElementById("question")
 const exitBtn = document.getElementById("exit-button")
 const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
-const correctColor = document.getElementsByClassName("correct-choice")
-console.log("correct-choice");
 const questionButtons = [btn1, btn2, btn3, btn4]
-questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 
 let newQuestion;
 let correct;
 let currentScore = 0;
-let counterBegin;
+let counterBegun;
 let timeLeft;
 let count = 0;
 let currentQuestionIndex = 0;
 
-
-
+// start button
+startBtn.addEventListener("click", startQuiz)
+// answer check for each button
+questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
+// quit button that takes you back to homepage
+quitBtn.addEventListener("click", () => {
+    currentQuestionIndex = 0;
+    counterBegun = false;
+});
+// next button for the next questions
 nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
     renderQuestion()
@@ -31,39 +36,20 @@ nextBtn.addEventListener("click", () => {
     console.log(currentQuestionIndex);
 }
 )
-
+// exit button to bring you back to homepage 
 exitBtn.addEventListener("click", () => {
+    currentQuestionIndex = 0;
+    counterBegun = false;
     loser.classList.add("hidden")
     loser.classList.remove("visible")
     welcomeBox.classList.remove('hidden')
     welcomeBox.classList.add('visible')
 })
 
-startBtn.addEventListener("click", startQuiz)
-quitBtn.addEventListener("click", () => {
-    return counterBegin = false
-});
-
-function answerCheck(event) {
-   correct = newQuestion.answer
-    console.log(correct);
-    if (event.target.textContent === correct) {
-        currentScore++
-        event.target.classList.add("correct-choice")
-        score.textContent = currentScore;
-        event.target.disabled = true;
-    } else if (event.target.textContent !== correct) {
-        event.target.classList.add("wrong-choice") 
-    }
-}
-
-function restartQuestions() {
-    questionButtons.forEach(btn => btn.disabled = false);
-}
-
+// start quiz function 
 function startQuiz() {
-    counterBegin = true
-    if (counterBegin === true) {
+    counterBegun = true;
+    if (counterBegun === true) {
         startCounter()
     }
     welcomeBox.classList.remove('visible')
@@ -73,11 +59,30 @@ function startQuiz() {
     renderQuestion()
 }
 
+// check answer and change color if true or false
+function answerCheck(event) {
+    correct = newQuestion.answer
+    console.log(correct);
+    if (event.target.textContent === correct) {
+        currentScore++
+        event.target.classList.add("correct-choice")
+        score.textContent = currentScore;
+        event.target.disabled = true;
+    } else if (event.target.textContent !== correct) {
+        event.target.classList.add("wrong-choice")
+    }
+
+}/* answer check disables to correct answer button so that 
+the user cannot keep scoring points, this resets it back to being clickable */
+function restartCorrectAnswer() {
+    questionButtons.forEach(btn => btn.disabled = false);
+}
+
 /* new question take the current index of questions and displays
 curButton creates the id fo the answer button and then increments it 
 by the length of the array with for each */
 function renderQuestion() {
-    restartQuestions() 
+    restartCorrectAnswer()
     newQuestion = questionArray[currentQuestionIndex]
     question.textContent = newQuestion.question
     let idx = 1;
@@ -93,8 +98,9 @@ function renderQuestion() {
     return newQuestion
 }
 
+// start counter function 
 function startCounter() {
-    count = 60
+    count = 10
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
@@ -105,7 +111,7 @@ function startCounter() {
             clearInterval(timeLeft)
             userLost()
         }
-        if (counterBegin === false) {
+        if (counterBegun === false) {
             counter.textContent = 0;
             welcomeBox.classList.remove('hidden')
             welcomeBox.classList.add('visible')
@@ -117,14 +123,15 @@ function startCounter() {
     }, 1000);
 }
 
+// user lost page displayed 
 function userLost() {
-    quiz.style.display = 'none'
-    quiz.classList.add('visible');
+    quiz.classList.remove('visible')
+    quiz.classList.add('hidden')
     loser.classList.add('visible')
     loser.classList.remove('hidden')
 }
 
-
+// question obj
 let questionArray = [
     {
         question: "which TV show has the largest trans cast in history?",
@@ -138,7 +145,7 @@ let questionArray = [
     },
     {
         question: "america’s first transgender statue celebrates and honors which activists from the Stonewall Riots?",
-        options: ["Marsha P Johnson", "Sylvia Rivera","name", "Marsha P Johnson and Sylvia Rivera"],
+        options: ["Marsha P Johnson", "Sylvia Rivera", "name", "Marsha P Johnson and Sylvia Rivera"],
         answer: "Marsha P Johnson and Sylvia Rivera"
     },
     {
