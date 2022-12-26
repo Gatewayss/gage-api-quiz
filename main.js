@@ -162,17 +162,12 @@ let questionArray = [
 
 
 /* TODO: 
-create questions and answers,
-put those in a object, 
-make a next button,
-use text content to change the test after each question after clicking on the next content,
-have the answers set to true or false and display
-them if user gets them right and add to score,
-create the count down,
+update questions and answers,
 if they get a question wrong subtract time 
-create the score that updates,
-
+figure out how to reset the quiz efficiently,
+fix the last question button, 
+add event listener so that when the quiz is over 
+it shows the winner page,
 create a finish page 
-create a high score page 
 figure out local storage to save score
 */
