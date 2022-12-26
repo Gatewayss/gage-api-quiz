@@ -134,6 +134,11 @@ function startCounter() {
             loser.classList.add("hidden")
             return clearInterval(timeLeft)
         }
+        if (userWon) {
+            count = 0;
+            counter.textContent = 0;
+            return clearInterval(timeLeft)
+        }
     }, 1000);
 }
 
