@@ -8,6 +8,7 @@ const question = document.getElementById("question")
 const exitBtn = document.getElementById("exit-button")
 const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
+const winner = document.getElementById("winner-container")
 const questionButtons = [btn1, btn2, btn3, btn4]
 
 let newQuestion;
@@ -17,6 +18,8 @@ let counterBegun;
 let timeLeft;
 let count = 0;
 let currentQuestionIndex = 0;
+let userWon = false; 
+
 
 // start button
 startBtn.addEventListener("click", startQuiz)
@@ -30,7 +33,6 @@ quitBtn.addEventListener("click", () => {
     questionButtons.forEach(btn => btn.classList.remove("wrong-choice"))
     currentScore = 0;
     score.textContent = currentScore;
-    console.log(currentQuestionIndex);
 });
 // next button for the next questions
 nextBtn.addEventListener("click", () => {
@@ -38,7 +40,7 @@ nextBtn.addEventListener("click", () => {
     renderQuestion()
     questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
     questionButtons.forEach(btn => btn.classList.remove("wrong-choice"))
-    console.log(currentQuestionIndex);
+    console.log(currentQuestionIndex)
 }
 )
 // exit button to bring you back to homepage 
@@ -89,6 +91,10 @@ function restartCorrectAnswer() {
 curButton creates the id fo the answer button and then increments it 
 by the length of the array with for each */
 function renderQuestion() {
+    if (currentQuestionIndex === 5) {
+        winnerPage()
+        return userWon = true
+    } else {
     restartCorrectAnswer()
     newQuestion = questionArray[currentQuestionIndex]
     question.textContent = newQuestion.question
@@ -104,10 +110,10 @@ function renderQuestion() {
     )
     return newQuestion
 }
-
+}
 // start counter function 
 function startCounter() {
-    count = 10
+    count = 15
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
@@ -132,12 +138,24 @@ function startCounter() {
 
 // user lost page displayed 
 function userLost() {
+    if (userWon) {
+        return;
+    } else {
     quiz.classList.remove('visible')
     quiz.classList.add('hidden')
     loser.classList.add('visible')
     loser.classList.remove('hidden')
+    }
 }
 
+function winnerPage() {
+    quiz.classList.remove('visible')
+    quiz.classList.add('hidden')
+    winner.classList.remove('hidden')
+    winner.classList.add('visible')
+    loser.classList.add('hidden')
+    loser.classList.remove('visible')
+}
 // question obj
 let questionArray = [
     {
