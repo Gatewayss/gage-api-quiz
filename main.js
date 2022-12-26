@@ -8,6 +8,7 @@ const question = document.getElementById("question")
 const exitBtn = document.getElementById("exit-button")
 const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
+const score2 = document.getElementById("score2")
 const winner = document.getElementById("winner-container")
 const questionButtons = [btn1, btn2, btn3, btn4]
 
@@ -149,6 +150,7 @@ function userLost() {
 }
 
 function winnerPage() {
+    score2.textContent = currentScore;
     quiz.classList.remove('visible')
     quiz.classList.add('hidden')
     winner.classList.remove('hidden')
