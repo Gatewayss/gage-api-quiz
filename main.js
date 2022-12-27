@@ -10,6 +10,8 @@ const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
 const score2 = document.getElementById("score2")
 const winner = document.getElementById("winner-container")
+const backBtn = document.getElementById("back-button")
+console.log(backBtn);
 const questionButtons = [btn1, btn2, btn3, btn4]
 
 let newQuestion;
@@ -38,6 +40,12 @@ nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
     renderQuestion()
 }
+)
+//back button to navigate between questions only
+backBtn.addEventListener("click", () => {
+    currentQuestionIndex--;
+    renderQuestion()
+    }
 )
 // exit button to bring you back to homepage 
 exitBtn.addEventListener("click", () => {
@@ -112,7 +120,7 @@ function renderQuestion() {
 }
 // start counter function 
 function startCounter() {
-    count = 20
+    count = 60
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
