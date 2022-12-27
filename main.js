@@ -23,6 +23,12 @@ let count = 0;
 let currentQuestionIndex = 0;
 let userWon = false;
 
+// submit button TODO:
+//const array = [1, 2, 3, 4, 5, 6, 7];
+// push puts new at the end and the render that 
+//string, parse 
+//console.log(array.slice(-3));  // Output: [5, 6, 7]
+localStorage.setItem('highscores', initial  + ', ' + currentScore);
 
 // start button
 startBtn.addEventListener("click", startQuiz)
