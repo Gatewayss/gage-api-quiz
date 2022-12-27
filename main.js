@@ -80,6 +80,7 @@ function answerCheck(event) {
         event.target.disabled = true;
     } else if (event.target.textContent !== correct) {
         event.target.classList.add("wrong-choice")
+        count = count - 10
     }
 
 }/* answer check disables to correct answer button so that 
@@ -114,7 +115,7 @@ function renderQuestion() {
 }
 // start counter function 
 function startCounter() {
-    count = 15
+    count = 60
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
