@@ -122,8 +122,9 @@ function startCounter() {
         if (count === 10) {
             counter.style.color = "red"
         }
-        if (count === 0) {
+        if (count <= 0) {
             clearInterval(timeLeft)
+            counter.textContent = 0; 
             userLost()
         }
         if (counterBegun === false) {
