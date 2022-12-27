@@ -202,11 +202,10 @@ let questionArray = [
 
 /* TODO: 
 update questions and answers,
-if they get a question wrong subtract time 
 figure out how to reset the quiz efficiently,
-fix the last question button, 
-add event listener so that when the quiz is over 
-it shows the winner page,
-create a finish page 
+fix the last question buttons, 
+create a high score page,
+hide the back and next button ^,
 figure out local storage to save score
+clean the code 
 */
