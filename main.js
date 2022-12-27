@@ -19,7 +19,7 @@ let counterBegun;
 let timeLeft;
 let count = 0;
 let currentQuestionIndex = 0;
-let userWon = false; 
+let userWon = false;
 
 
 // start button
@@ -30,18 +30,13 @@ questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 quitBtn.addEventListener("click", () => {
     currentQuestionIndex = 0;
     counterBegun = false;
-    questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
-    questionButtons.forEach(btn => btn.classList.remove("wrong-choice"))
-    currentScore = 0;
     score.textContent = currentScore;
+    currentScore = 0;
 });
 // next button for the next questions
 nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
     renderQuestion()
-    questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
-    questionButtons.forEach(btn => btn.classList.remove("wrong-choice"))
-    console.log(currentQuestionIndex)
 }
 )
 // exit button to bring you back to homepage 
@@ -97,25 +92,27 @@ function renderQuestion() {
         winnerPage()
         return userWon = true
     } else {
-    restartCorrectAnswer()
-    newQuestion = questionArray[currentQuestionIndex]
-    question.textContent = newQuestion.question
-    let idx = 1;
-    let curButton;
-    let newButton;
-    newQuestion.options.forEach(function (options) {
-        curButton = "btn" + idx;
-        newButton = document.getElementById(curButton);
-        newButton.textContent = options;
-        idx++;
+        restartCorrectAnswer()
+        newQuestion = questionArray[currentQuestionIndex]
+        question.textContent = newQuestion.question
+        let idx = 1;
+        let curButton;
+        let newButton;
+        newQuestion.options.forEach(function (options) {
+            curButton = "btn" + idx;
+            newButton = document.getElementById(curButton);
+            newButton.textContent = options;
+            idx++;
+            questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
+            questionButtons.forEach(btn => btn.classList.remove("wrong-choice"));
+        }
+        )
+        return newQuestion
     }
-    )
-    return newQuestion
-}
 }
 // start counter function 
 function startCounter() {
-    count = 60
+    count = 20
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
@@ -124,7 +121,7 @@ function startCounter() {
         }
         if (count <= 0) {
             clearInterval(timeLeft)
-            counter.textContent = 0; 
+            counter.textContent = 0;
             userLost()
         }
         if (counterBegun === false) {
@@ -149,10 +146,10 @@ function userLost() {
     if (userWon) {
         return;
     } else {
-    quiz.classList.remove('visible')
-    quiz.classList.add('hidden')
-    loser.classList.add('visible')
-    loser.classList.remove('hidden')
+        quiz.classList.remove('visible')
+        quiz.classList.add('hidden')
+        loser.classList.add('visible')
+        loser.classList.remove('hidden')
     }
 }
 
