@@ -11,7 +11,10 @@ const score = document.getElementById("score")
 const score2 = document.getElementById("score2")
 const winner = document.getElementById("winner-container")
 const backBtn = document.getElementById("back-button")
-console.log(backBtn);
+const submitBtn = document.getElementById("submit")
+const input = document.querySelector("input")
+console.log(input);
+console.log(submitBtn);
 const questionButtons = [btn1, btn2, btn3, btn4]
 
 let newQuestion;
@@ -28,8 +31,8 @@ let userWon = false;
 // push puts new at the end and the render that 
 //string, parse 
 //console.log(array.slice(-3));  // Output: [5, 6, 7]
-localStorage.setItem('highscores', initial  + ', ' + currentScore);
 
+submitBtn.addEventListener('click', scorePageDisplay)
 // start button
 startBtn.addEventListener("click", startQuiz)
 // answer check for each button
@@ -64,6 +67,16 @@ exitBtn.addEventListener("click", () => {
     welcomeBox.classList.remove('hidden')
     welcomeBox.classList.add('visible')
 })
+
+function scorePageDisplay() {
+    
+    //winner.classList.add("hidden")
+    //winner.classList.remove('visible')
+    initials = input.value
+    console.log(initials);
+    localStorage.setItem('high scores', initials  + ', ' + currentScore);
+    
+}
 
 // start quiz function 
 function startQuiz() {
