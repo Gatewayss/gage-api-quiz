@@ -13,8 +13,10 @@ const winner = document.getElementById("winner-container")
 const backBtn = document.getElementById("back-button")
 const submitBtn = document.getElementById("submit")
 const input = document.querySelector("input")
-console.log(input);
-console.log(submitBtn);
+const scoreList = document.getElementById("score-list")
+const scoreBoard = document.querySelector('div.score-board')
+console.log(scoreBoard);
+console.log(scoreList)
 const questionButtons = [btn1, btn2, btn3, btn4]
 
 let newQuestion;
@@ -54,7 +56,7 @@ nextBtn.addEventListener("click", () => {
 backBtn.addEventListener("click", () => {
     currentQuestionIndex--;
     renderQuestion()
-    }
+}
 )
 // exit button to bring you back to homepage 
 exitBtn.addEventListener("click", () => {
@@ -68,15 +70,22 @@ exitBtn.addEventListener("click", () => {
     welcomeBox.classList.add('visible')
 })
 
-function scorePageDisplay() {
-    
-    //winner.classList.add("hidden")
-    //winner.classList.remove('visible')
-    initials = input.value
-    console.log(initials);
-    localStorage.setItem('high scores', initials  + ', ' + currentScore);
-    
+function scorePageDisplay(event) {
+    winner.classList.add("hidden")
+    winner.classList.remove('visible')
+    scoreBoard.classList.remove('hidden')
+    scoreBoard.classList.add('visible')
+    localStorage.getItem('userScores')
+    let userScores = []
+    userScores.push({ initials: input.value, score: currentScore });
+    let li = document.createElement("li");
+    li.textContent = `Initial: ${input.value} Score:${currentScore}`;
+    localStorage.setItem('userScores', input.value + ' ' + currentScore)
+    scoreList.appendChild(li);
+    event.preventDefault()
 }
+//}
+
 
 // start quiz function 
 function startQuiz() {
