@@ -55,7 +55,6 @@ body {
 .rules-container {
     box-shadow: 0 0 8px 3px 
     var(--main-blue);
-    margin-top: 2em;
 }
 
 .start-button {
@@ -205,6 +204,7 @@ button[type="submit"] {
 @media only screen and (max-width: 933px) {
     h1 {
         text-align: center;
+        flex-direction: column;
     }
     .quiz {
         margin-top: 2em;
@@ -214,6 +214,22 @@ button[type="submit"] {
     }
     .timer {
         text-align: center;
+    }
+    .move {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 845px) {
+    .move {
+        display: block;
+    }
+    .rules-container {
+        margin-top: 20%;
+        
+    }
+    .header-container {
+        margin-bottom: 15%;
     }
 }
     
