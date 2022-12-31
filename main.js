@@ -86,7 +86,6 @@ function scorePageDisplay(event) {
 }
 //}
 
-
 // start quiz function 
 function startQuiz() {
     counterBegun = true;
@@ -153,7 +152,7 @@ function startCounter() {
         count--;
         counter.textContent = count
         if (count === 10) {
-            counter.style.color = "red"
+            $('span#counter').css('color', 'red')
         }
         if (count <= 0) {
             clearInterval(timeLeft)
