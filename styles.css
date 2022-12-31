@@ -68,6 +68,23 @@ body {
     letter-spacing: .1em;  
   }
 
+p[class="score"] {
+    color: var(--main-blue);
+    margin-right: 5px;
+}
+
+p[class="timer"] {
+    color: var(--main-blue);
+    margin-left: 5px;
+}
+
+.pink-text {
+    color: var(--pink);
+}
+
+.white-text {
+    color: var(--white);
+}
 /* Quiz section */
 .question {
     align-self: center;
@@ -201,7 +218,7 @@ button[type="submit"] {
 
 /* 485 and 933 break point needs to be modified */
 
-@media only screen and (max-width: 933px) {
+@media only screen and (max-width: 947px) {
     h1 {
         text-align: center;
         flex-direction: column;
@@ -220,17 +237,26 @@ button[type="submit"] {
     }
 }
 
-@media only screen and (max-width: 845px) {
+@media only screen and (max-width: 859px) {
     .move {
         display: block;
     }
     .rules-container {
-        margin-top: 20%;
-        
+        margin-top: 20%;  
     }
     .header-container {
         margin-bottom: 15%;
     }
+    p[class="timer"] {
+        color: var(--white);
+    }   
+    p[class="score"] {
+        color: var(--white); 
+    }
+    .blue-text {
+        color: var(--main-blue)
+    }
+    
 }
     
 @media only screen and (max-width: 430px) {
