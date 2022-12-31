@@ -63,11 +63,8 @@ body {
     width: 100%;
     padding: .8em;
     margin-bottom: 1em !important;
+    letter-spacing: .1em; 
 }
-
-.start-text {
-    letter-spacing: .1em;  
-  }
 
 p[class="score"] {
     color: var(--main-blue);
