@@ -55,6 +55,7 @@ body {
 .rules-container {
     box-shadow: 0 0 8px 3px 
     var(--main-blue);
+    margin-bottom: 15%;
 }
 
 .start-button {
