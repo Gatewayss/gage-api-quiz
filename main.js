@@ -9,14 +9,10 @@ const exitBtn = document.getElementById("exit-button")
 const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
 const score2 = document.getElementById("score2")
-const winner = document.getElementById("winner-container")
 const backBtn = document.getElementById("back-button")
 const submitBtn = document.getElementById("submit")
 const input = document.querySelector("input")
 const scoreList = document.getElementById("score-list")
-const scoreBoard = document.querySelector('div.score-board')
-console.log(scoreBoard);
-console.log(scoreList)
 const questionButtons = [btn1, btn2, btn3, btn4]
 
 let newQuestion;
@@ -64,17 +60,13 @@ exitBtn.addEventListener("click", () => {
     score.textContent = currentScore;
     currentQuestionIndex = 0;
     counterBegun = false;
-    loser.classList.add("hidden")
-    loser.classList.remove("visible")
-    welcomeBox.classList.remove('hidden')
-    welcomeBox.classList.add('visible')
+    $('#loser').toggleClass('hidden')
+    $('#welcomeBox').toggleClass('hidden')
 })
 
 function scorePageDisplay(event) {
-    winner.classList.add("hidden")
-    winner.classList.remove('visible')
-    scoreBoard.classList.remove('hidden')
-    scoreBoard.classList.add('visible')
+    $('div#winner-container').toggleClass('hidden')
+    $('div.score-board').toggleClass('hidden')
     localStorage.getItem('userScores')
     let userScores = []
     userScores.push({ initials: input.value, score: currentScore });
@@ -92,10 +84,8 @@ function startQuiz() {
     if (counterBegun === true) {
         startCounter()
     }
-    welcomeBox.classList.remove('visible')
-    welcomeBox.classList.add('hidden')
-    quiz.classList.remove('hidden');
-    quiz.classList.add('visible');
+    $('#welcomeBox').toggleClass('hidden')
+    $('#quiz').toggleClass('hidden')
     renderQuestion()
 }
 
@@ -147,7 +137,7 @@ function renderQuestion() {
 }
 // start counter function 
 function startCounter() {
-    count = 60
+    count = 10
     let timeLeft = setInterval(function () {
         count--;
         counter.textContent = count
@@ -161,10 +151,8 @@ function startCounter() {
         }
         if (counterBegun === false) {
             counter.textContent = 0;
-            welcomeBox.classList.remove('hidden')
-            welcomeBox.classList.add('visible')
-            quiz.classList.remove('visible');
-            quiz.classList.add('hidden');
+            $('#welcomeBox').toggleClass('hidden')
+            $('#quiz').toggleClass('hidden')
             loser.classList.add("hidden")
             return clearInterval(timeLeft)
         }
@@ -181,21 +169,16 @@ function userLost() {
     if (userWon) {
         return;
     } else {
-        quiz.classList.remove('visible')
-        quiz.classList.add('hidden')
-        loser.classList.add('visible')
-        loser.classList.remove('hidden')
+        $('#quiz').toggleClass('hidden')
+        $('#loser').toggleClass('hidden')
     }
 }
 
 function winnerPage() {
     score2.textContent = currentScore;
-    quiz.classList.remove('visible')
-    quiz.classList.add('hidden')
-    winner.classList.remove('hidden')
-    winner.classList.add('visible')
-    loser.classList.add('hidden')
-    loser.classList.remove('visible')
+    $('#quiz').toggleClass('hidden')
+    $('div#winner-container').toggleClass('hidden')
+    $('#loser').toggleClass('visible')
 }
 // question obj
 let questionArray = [
