@@ -24,25 +24,24 @@ let count = 0;
 let currentQuestionIndex = 0;
 let userWon = false;
 
-// submit button TODO:
-//const array = [1, 2, 3, 4, 5, 6, 7];
-// push puts new at the end and the render that 
-//string, parse 
-//console.log(array.slice(-3));  // Output: [5, 6, 7]
-
+// submit button
 submitBtn.addEventListener('click', scorePageDisplay)
+
 // start button
 startBtn.addEventListener("click", startQuiz)
-// answer check for each button
+
+// renders a click event for each answer button so they can be checked   
 questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
-// quit button that takes you back to homepage
+
+// quit button restarts application
 quitBtn.addEventListener("click", () => {
     currentQuestionIndex = 0;
     counterBegun = false;
     score.textContent = currentScore;
     currentScore = 0;
 });
-// next button for the next questions
+
+// next button
 nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
     renderQuestion()
@@ -54,7 +53,7 @@ backBtn.addEventListener("click", () => {
     renderQuestion()
 }
 )
-// exit button to bring you back to homepage 
+// exit button restarts application
 exitBtn.addEventListener("click", () => {
     currentScore = 0;
     score.textContent = currentScore;
@@ -135,6 +134,7 @@ function renderQuestion() {
         return newQuestion
     }
 }
+
 // start counter function 
 function startCounter() {
     count = 10
@@ -180,7 +180,8 @@ function winnerPage() {
     $('div#winner-container').toggleClass('hidden')
     $('#loser').toggleClass('visible')
 }
-// question obj
+
+// questions, options and answers object 
 let questionArray = [
     {
         question: "which TV show has the largest trans cast in history?",
