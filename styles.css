@@ -190,7 +190,19 @@ ul li {
     padding: 1em;
     box-shadow: 0 0 8px 3px 
     var(--pink); 
+    margin-bottom: 4em;
 }
+
+.score-board h2 {
+    margin-top: .8em;
+}
+
+.score-board-quit {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+ }
 
 /* form section */
 
@@ -226,12 +238,6 @@ button[type="submit"] {
     width: 100%;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
-}
-
-.second {
-   display: flex;
-   margin-left: auto;
-   margin-right: auto;
 }
 
 /* css for display and hiding pages */
@@ -284,7 +290,9 @@ button[type="submit"] {
     .blue-text {
         color: var(--main-blue)
     }
-    
+    .score-board {
+        margin-top: 15%;
+    }
 }
     
 @media only screen and (max-width: 430px) {
@@ -299,6 +307,9 @@ button[type="submit"] {
     }
     .timer {
         font-size: 10px;
+    }
+    .score-board {
+        margin-top: 0;
     }
 }
 

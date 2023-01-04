@@ -66,7 +66,7 @@ exitBtn.addEventListener("click", () => {
 function scorePageDisplay(event) {
     $('div#winner-container').toggleClass('hidden')
     $('div.score-board').toggleClass('hidden')
-    let scoreQuitButton = $('<button type="button" class="nav-buttons second" id="quit-button">QUIT</button>')
+    let scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
     $('div.score-board').append(scoreQuitButton)
     userScores = []
     userScores.push({ initials: input.value, score: currentScore });
