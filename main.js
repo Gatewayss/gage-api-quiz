@@ -191,12 +191,12 @@ let questionArray = [
     },
     {
         question: "who designed the first transgender pride flag?",
-        options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms", "Stormé DeLarverie"],
+        options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms", ],
         answer: "Monica Helms"
     },
     {
-        question: "america’s first transgender statue celebrates and honors which activists from the Stonewall Riots?",
-        options: ["Marsha P Johnson", "Sylvia Rivera", "name", "Marsha P Johnson and Sylvia Rivera"],
+        question: "america’s first transgender statue honors which activists from the Stonewall Riots in 1969?",
+        options: ["Marsha P Johnson", "Sylvia Rivera", "Stormé DeLarverie", "Marsha P Johnson and Sylvia Rivera"],
         answer: "Marsha P Johnson and Sylvia Rivera"
     },
     {
@@ -205,9 +205,9 @@ let questionArray = [
         answer: "minneapolis"
     },
     {
-        question: "true or false: a transgender man pioneered the use of x-ray photography to detect tuberculosis.",
-        options: ["yes", "no"],
-        answer: "yes"
+        question: "which transgender man pioneered the use of x-ray photography to detect tuberculosis?",
+        options: ["lou sullivan", "elliot page", "alan hart", "billy tipton"],
+        answer: "alan hart"
     }
 ];
 
