@@ -66,16 +66,15 @@ exitBtn.addEventListener("click", () => {
 function scorePageDisplay(event) {
     $('div#winner-container').toggleClass('hidden')
     $('div.score-board').toggleClass('hidden')
-    localStorage.getItem('userScores')
-    let userScores = []
+    userScores = []
     userScores.push({ initials: input.value, score: currentScore });
     let li = document.createElement("li");
-    li.textContent = `Initial: ${input.value} Score:${currentScore}`;
-    localStorage.setItem('user score info:', 'initials: ' + input.value + ' ' + 'score: ' + currentScore)
+    li.textContent = `initial: ${input.value} score: ${currentScore}`;
+    localStorage.setItem('user score info:', `initials: ${input.value} score: ${currentScore}`)
     scoreList.appendChild(li);
     event.preventDefault()
 }
-//}
+
 
 // start quiz function 
 function startQuiz() {
@@ -213,10 +212,9 @@ let questionArray = [
 
 /* TODO: 
 update questions and answers,
-figure out how to reset the quiz efficiently,
 fix the last question buttons, 
-create a high score page,
-hide the back and next button ^,
-figure out local storage to save score
+add quit button to score board page and reset 
 clean the code 
+add sound effect?
+make readme 
 */

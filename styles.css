@@ -176,6 +176,23 @@ p[class="timer"] {
 .wrong-choice {
     background-color: red !important;
 }
+/* score board */
+h2:last-of-type {
+    text-align: center;
+}
+
+ul li {
+    list-style: none;
+}
+
+.score-board {
+    border: 2px solid #dd5c9d;
+    padding: 1em;
+    box-shadow: 0 0 8px 3px 
+    var(--pink);
+    background-color: black;
+}
+
 /* form section */
 
 input {
