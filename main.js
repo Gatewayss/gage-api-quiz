@@ -66,7 +66,12 @@ exitBtn.addEventListener("click", () => {
 function scorePageDisplay(event) {
     $('div#winner-container').toggleClass('hidden')
     $('div.score-board').toggleClass('hidden')
-    let scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
+    const scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
+    scoreQuitButton.on('click', function() {
+        $('#welcomeBox').toggleClass('hidden')
+        $('div.score-board').toggleClass('hidden')
+        return
+      });
     $('div.score-board').append(scoreQuitButton)
     userScores = []
     userScores.push({ initials: input.value, score: currentScore });
@@ -206,7 +211,7 @@ let questionArray = [
     },
     {
         question: "which transgender man pioneered the use of x-ray photography to detect tuberculosis?",
-        options: ["lou sullivan", "elliot page", "alan hart", "billy tipton"],
+        options: ["lou Sullivan", "elliot page", "alan hart", "billy tipton"],
         answer: "alan hart"
     }
 ];
