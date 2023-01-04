@@ -189,8 +189,7 @@ ul li {
     border: 2px solid #dd5c9d;
     padding: 1em;
     box-shadow: 0 0 8px 3px 
-    var(--pink);
-    background-color: black;
+    var(--pink); 
 }
 
 /* form section */
@@ -220,6 +219,14 @@ button[type="submit"] {
 .hot-dog {
     height: 200px;
     width: auto;
+}
+
+.protect-trans-kids {
+    height: 200px; 
+    width: 100%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    
 }
 /* css for display and hiding pages */
 
