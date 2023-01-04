@@ -71,7 +71,7 @@ function scorePageDisplay(event) {
     userScores.push({ initials: input.value, score: currentScore });
     let li = document.createElement("li");
     li.textContent = `Initial: ${input.value} Score:${currentScore}`;
-    localStorage.setItem('userScores', input.value + ' ' + currentScore)
+    localStorage.setItem('user score info:', 'initials: ' + input.value + ' ' + 'score: ' + currentScore)
     scoreList.appendChild(li);
     event.preventDefault()
 }
