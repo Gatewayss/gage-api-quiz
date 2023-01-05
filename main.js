@@ -24,11 +24,11 @@ let count = 0;
 let currentQuestionIndex = 0;
 let userWon = false;
 
-// submit button
-submitBtn.addEventListener('click', scorePageDisplay)
-
 // start button
-startBtn.addEventListener("click", startQuiz)
+startBtn.addEventListener("click", startQuiz);
+
+// submit button
+submitBtn.addEventListener('click', scorePageDisplay);
 
 // renders a click event for each answer button so they can be checked   
 questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
@@ -42,14 +42,14 @@ quitBtn.addEventListener("click", () => {
 nextBtn.addEventListener("click", () => {
     currentQuestionIndex++;
     renderQuestion()
-}
-)
+});
+
 //back button to navigate between questions only
 backBtn.addEventListener("click", () => {
     currentQuestionIndex--;
     renderQuestion()
-}
-)
+});
+
 // exit button restarts application
 exitBtn.addEventListener("click", () => {
     currentScore = 0;
@@ -58,60 +58,22 @@ exitBtn.addEventListener("click", () => {
     counterBegun = false;
     $('#loser').toggleClass('hidden')
     $('#welcomeBox').toggleClass('hidden')
-})
-
-function scorePageDisplay(event) {
-    $('div#winner-container').toggleClass('hidden')
-    $('div.score-board').toggleClass('hidden')
-    const scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
-    scoreQuitButton.on('click', function() {
-        location.reload()
-      });
-    $('div.score-board').append(scoreQuitButton)
-    userScores = []
-    userScores.push({ initials: input.value, score: currentScore });
-    let li = document.createElement("li");
-    li.textContent = `initial: ${input.value} score: ${currentScore}`;
-    localStorage.setItem('user score info:', `initials: ${input.value} score: ${currentScore}`)
-    scoreList.appendChild(li);
-    event.preventDefault()
-}
-
+});
 
 // start quiz function 
 function startQuiz() {
     counterBegun = true;
     if (counterBegun === true) {
-        startCounter()
+        quizCounter()
     }
     $('#welcomeBox').toggleClass('hidden')
     $('#quiz').toggleClass('hidden')
     renderQuestion()
-}
+};
 
-// check answer and change color if true or false
-function answerCheck(event) {
-    correct = newQuestion.answer
-    console.log(correct);
-    if (event.target.textContent === correct) {
-        currentScore++
-        event.target.classList.add("correct-choice")
-        score.textContent = currentScore;
-        event.target.disabled = true;
-    } else if (event.target.textContent !== correct) {
-        event.target.classList.add("wrong-choice")
-        count = count - 10
-    }
-
-}/* answer check disables to correct answer button so that 
-the user cannot keep scoring points, this resets it back to being clickable */
-function restartCorrectAnswer() {
-    questionButtons.forEach(btn => btn.disabled = false);
-}
-
-/* new question take the current index of questions and displays
-curButton creates the id fo the answer button and then increments it 
-by the length of the array with for each */
+/* new question takes the current question index,
+idx increments by 1 and is added to the current button 
+so that each button is updated to the current question */
 function renderQuestion() {
     if (currentQuestionIndex === 5) {
         winnerPage()
@@ -130,14 +92,34 @@ function renderQuestion() {
             idx++;
             questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
             questionButtons.forEach(btn => btn.classList.remove("wrong-choice"));
-        }
-        )
+        })
         return newQuestion
     }
-}
+};
 
-// start counter function 
-function startCounter() {
+// check answer, add points, subtract time and changes color if true or false
+function answerCheck(event) {
+    correct = newQuestion.answer
+    console.log(correct);
+    if (event.target.textContent === correct) {
+        currentScore++
+        event.target.classList.add("correct-choice")
+        score.textContent = currentScore;
+        event.target.disabled = true;
+    } else if (event.target.textContent !== correct) {
+        event.target.classList.add("wrong-choice")
+        count = count - 10
+    }
+
+};
+
+/* disables the click function on the correct answer button so that the user cannot keep scoring points by clicking it */
+function restartCorrectAnswer() {
+    questionButtons.forEach(btn => btn.disabled = false);
+};
+
+// counter function 
+function quizCounter() {
     count = 60
     let timeLeft = setInterval(function () {
         count--;
@@ -163,9 +145,28 @@ function startCounter() {
             return clearInterval(timeLeft)
         }
     }, 1000);
-}
+};
 
-// user lost page displayed 
+/* score page display where new quit button is rendered 
+and local storage is saved and display */
+function scorePageDisplay(event) {
+    $('div#winner-container').toggleClass('hidden')
+    $('div.score-board').toggleClass('hidden')
+    const scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
+    scoreQuitButton.on('click', function() {
+        location.reload()
+      });
+    $('div.score-board').append(scoreQuitButton)
+    userScores = []
+    userScores.push({ initials: input.value, score: currentScore });
+    let li = document.createElement("li");
+    li.textContent = `initial: ${input.value} score: ${currentScore}`;
+    localStorage.setItem('user score info:', `initials: ${input.value} score: ${currentScore}`)
+    scoreList.appendChild(li);
+    event.preventDefault()
+};
+
+// loser page display  
 function userLost() {
     if (userWon) {
         return;
@@ -173,16 +174,17 @@ function userLost() {
         $('#quiz').toggleClass('hidden')
         $('#loser').toggleClass('hidden')
     }
-}
+};
 
+// winner page display 
 function winnerPage() {
     score2.textContent = currentScore;
     $('#quiz').toggleClass('hidden')
     $('div#winner-container').toggleClass('hidden')
     $('#loser').toggleClass('visible')
-}
+};
 
-// questions, options and answers object 
+// questions, options and answers object
 let questionArray = [
     {
         question: "which TV show has the largest trans cast in history?",
@@ -210,13 +212,3 @@ let questionArray = [
         answer: "alan hart"
     }
 ];
-
-
-/* TODO: 
-update questions and answers,
-fix the last question buttons, 
-add quit button to score board page and reset 
-clean the code 
-add sound effect?
-make readme 
-*/
