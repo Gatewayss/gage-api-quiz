@@ -35,10 +35,7 @@ questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 
 // quit button restarts application
 quitBtn.addEventListener("click", () => {
-    currentQuestionIndex = 0;
-    counterBegun = false;
-    score.textContent = currentScore;
-    currentScore = 0;
+    location.reload()
 });
 
 // next button
@@ -68,9 +65,7 @@ function scorePageDisplay(event) {
     $('div.score-board').toggleClass('hidden')
     const scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
     scoreQuitButton.on('click', function() {
-        $('#welcomeBox').toggleClass('hidden')
-        $('div.score-board').toggleClass('hidden')
-        return
+        location.reload()
       });
     $('div.score-board').append(scoreQuitButton)
     userScores = []
