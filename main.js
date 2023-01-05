@@ -13,7 +13,11 @@ const backBtn = document.getElementById("back-button")
 const submitBtn = document.getElementById("submit")
 const input = document.querySelector("input")
 const scoreList = document.getElementById("score-list")
+const audio = document.querySelector('audio')
 const questionButtons = [btn1, btn2, btn3, btn4]
+
+let test = document.querySelectorAll('button')
+    console.log(test);
 
 let newQuestion;
 let correct;
@@ -59,6 +63,24 @@ exitBtn.addEventListener("click", () => {
     $('#loser').toggleClass('hidden')
     $('#welcomeBox').toggleClass('hidden')
 });
+
+test.forEach(btn => {
+    btn.addEventListener("mouseover", playSound);
+  });
+
+  function playSound() {
+    audio.play();
+    console.log("hi");
+  }
+
+  test.forEach(btn => {
+    btn.addEventListener("mouseout", stopSound);
+  });
+  
+  function stopSound() {
+    audio.pause();
+    audio.currentTime = 0;
+  }
 
 // start quiz function 
 function startQuiz() {
@@ -152,7 +174,7 @@ and local storage is saved and display */
 function scorePageDisplay(event) {
     $('div#winner-container').toggleClass('hidden')
     $('div.score-board').toggleClass('hidden')
-    const scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
+    let scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
     scoreQuitButton.on('click', function () {
         location.reload()
     });
