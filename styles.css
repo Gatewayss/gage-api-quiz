@@ -85,8 +85,8 @@ p[class="timer"] {
 }
 /* Quiz section */
 .question {
-    align-self: center;
-    justify-content: center;
+    
+    text-align: center;
     font-size: 1.5em;
 }
 
@@ -274,9 +274,6 @@ button[type="submit"] {
 @media only screen and (max-width: 859px) {
     .move {
         display: block;
-    }
-    .rules-container {
-        margin-top: 20%;  
     }
     .header-container {
         margin-bottom: 15%;
