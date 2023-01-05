@@ -83,6 +83,7 @@ p[class="timer"] {
 .white-text {
     color: var(--white);
 }
+
 /* Quiz section */
 .question {
     
@@ -176,6 +177,7 @@ p[class="timer"] {
 .wrong-answer {
     background-color: red !important;
 }
+
 /* score board */
 h2:last-of-type {
     text-align: center;
@@ -205,7 +207,6 @@ ul li {
  }
 
 /* form section */
-
 input {
     padding: .5em; 
     margin-top: 1em;
@@ -241,7 +242,6 @@ button[type="submit"] {
 }
 
 /* css for display and hiding pages */
-
 .hidden {
     display: none;
   }
@@ -250,8 +250,7 @@ button[type="submit"] {
     visibility: visible;
 }
 
-/* 485 and 933 break point needs to be modified */
-
+/* change navbar header layout to block level */
 @media only screen and (max-width: 947px) {
     h1 {
         text-align: center;
@@ -271,6 +270,7 @@ button[type="submit"] {
     }
 }
 
+/* change navbar items colors */
 @media only screen and (max-width: 859px) {
     .move {
         display: block;
@@ -291,7 +291,8 @@ button[type="submit"] {
         margin-top: 10%;
     }
 }
-    
+
+/* change application layout for xs screens */
 @media only screen and (max-width: 430px) {
     h1 {
         font-size: 15px; 
@@ -309,9 +310,3 @@ button[type="submit"] {
         margin-top: 0;
     }
 }
-
-/*@media only screen and (max-width: 630px) {
-    h1 {
-        
-    }
-}*/
