@@ -169,11 +169,11 @@ p[class="timer"] {
     margin: 0 0 8px;
 }
 
-.correct-choice {
+.correct-answer {
     background-color: var(--green) !important;
 }
 
-.wrong-choice {
+.wrong-answer {
     background-color: red !important;
 }
 /* score board */

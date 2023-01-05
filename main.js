@@ -90,8 +90,8 @@ function renderQuestion() {
             newButton = document.getElementById(curButton);
             newButton.textContent = options;
             idx++;
-            questionButtons.forEach(btn => btn.classList.remove("correct-choice"));
-            questionButtons.forEach(btn => btn.classList.remove("wrong-choice"));
+            questionButtons.forEach(btn => btn.classList.remove("correct-answer"));
+            questionButtons.forEach(btn => btn.classList.remove("wrong-answer"));
         })
         return newQuestion
     }
@@ -103,11 +103,11 @@ function answerCheck(event) {
     console.log(correct);
     if (event.target.textContent === correct) {
         currentScore++
-        event.target.classList.add("correct-choice")
+        event.target.classList.add("correct-answer")
         score.textContent = currentScore;
         event.target.disabled = true;
     } else if (event.target.textContent !== correct) {
-        event.target.classList.add("wrong-choice")
+        event.target.classList.add("wrong-answer")
         count = count - 10
     }
 
