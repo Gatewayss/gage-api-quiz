@@ -290,8 +290,8 @@ button[type="submit"] {
     .blue-text {
         color: var(--main-blue)
     }
-    .score-board {
-        margin-top: 15%;
+    body {
+        margin-top: 5%;
     }
 }
     
