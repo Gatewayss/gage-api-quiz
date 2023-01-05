@@ -153,17 +153,17 @@ function scorePageDisplay(event) {
     $('div#winner-container').toggleClass('hidden')
     $('div.score-board').toggleClass('hidden')
     const scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
-    scoreQuitButton.on('click', function() {
+    scoreQuitButton.on('click', function () {
         location.reload()
-      });
+    });
     $('div.score-board').append(scoreQuitButton)
-    userScores = []
-    userScores.push({ initials: input.value, score: currentScore });
-    let li = document.createElement("li");
-    li.textContent = `initial: ${input.value} score: ${currentScore}`;
-    localStorage.setItem('user score info:', `initials: ${input.value} score: ${currentScore}`)
-    scoreList.appendChild(li);
-    event.preventDefault()
+        userScores = []
+        userScores.push({ initials: input.value, score: currentScore });
+        let li = document.createElement("li");
+        li.textContent = `initial: ${input.value} score: ${currentScore}`;
+        localStorage.setItem('user score info:', `initials: ${input.value} score: ${currentScore}`)
+        scoreList.appendChild(li);
+        event.preventDefault()
 };
 
 // loser page display  
@@ -193,7 +193,7 @@ let questionArray = [
     },
     {
         question: "who designed the first transgender pride flag?",
-        options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms", ],
+        options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms",],
         answer: "Monica Helms"
     },
     {
