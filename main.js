@@ -188,18 +188,18 @@ function winnerPage() {
 let questionArray = [
     {
         question: "which TV show has the largest trans cast in history?",
-        options: ["Pose", "Euphoria", "Queer eye", "Grey's anatomy "],
-        answer: "Pose"
+        options: ["pose", "euphoria", "queer eye", "grey's anatomy "],
+        answer: "pose"
     },
     {
         question: "who designed the first transgender pride flag?",
-        options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Monica Helms",],
-        answer: "Monica Helms"
+        options: ["sylvia rivera", "miss major griffin-gracy", "caroline cossey", "monica helms",],
+        answer: "monica helms"
     },
     {
         question: "america’s first transgender statue honors which activists from the Stonewall Riots in 1969?",
-        options: ["Marsha P Johnson", "Sylvia Rivera", "Stormé DeLarverie", "Marsha P Johnson and Sylvia Rivera"],
-        answer: "Marsha P Johnson and Sylvia Rivera"
+        options: ["marsha p johnson", "sylvia rivera", "stormé deLarverie", "marsha p johnson and sylvia rivera"],
+        answer: "marsha p johnson and sylvia rivera"
     },
     {
         question: "which city in the united states was the first to pass trans-inclusive legislation?",
