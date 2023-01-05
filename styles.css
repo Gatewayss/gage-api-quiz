@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
-    --main-blue: #4780d5;
-    --blue-hover: #6e92c8;
-    --white: #dad5d5;
+    --main-blue: #0c6efd;
+    --blue-hover: #5591eb;
+    --white: #fff;
     --green: #55aa43;
-    --pink: #dd5c9d;
-    --pink-hover: #f89cdf;
+    --pink: #e7529c;
+    --pink-hover: #f58abf;
   }
 
 * {
