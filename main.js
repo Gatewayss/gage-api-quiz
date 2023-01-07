@@ -174,11 +174,11 @@ and local storage is saved and display */
 function scorePageDisplay(event) {
     $('div#winner-container').toggleClass('hidden')
     $('div.score-board').toggleClass('hidden')
-    let scoreQuitButton = $('<button type="button" class="nav-buttons score-board-quit" id="quit-button">QUIT</button>')
+    let scoreQuitButton = $('.score-board-quit')
     scoreQuitButton.on('click', function () {
+        console.log("hi");
         location.reload()
     });
-    $('div.score-board').append(scoreQuitButton)
         userScores = []
         userScores.push({ initials: input.value, score: currentScore });
         let li = document.createElement("li");
