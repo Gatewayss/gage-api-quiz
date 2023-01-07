@@ -19,6 +19,7 @@ const questionButtons = [btn1, btn2, btn3, btn4]
 let test = document.querySelectorAll('button')
     console.log(test);
 
+let userScores = [];
 let newQuestion;
 let correct;
 let currentScore = 0;
@@ -176,10 +177,8 @@ function scorePageDisplay(event) {
     $('div.score-board').toggleClass('hidden')
     let scoreQuitButton = $('.score-board-quit')
     scoreQuitButton.on('click', function () {
-        console.log("hi");
         location.reload()
     });
-        userScores = []
         userScores.push({ initials: input.value, score: currentScore });
         let li = document.createElement("li");
         li.textContent = `initial: ${input.value} score: ${currentScore}`;
