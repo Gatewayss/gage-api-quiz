@@ -7,6 +7,8 @@
     --green: #55aa43;
     --pink: #e7529c;
     --pink-hover: #f58abf;
+    --red: red; 
+    --red-hover: rgb(233, 49, 49);
   }
 
 * {
@@ -161,11 +163,15 @@ p[class="timer"] {
 }
 
 .lost-title {
-    color: red;
+    color: var(--red)
 }
 
 #exit-button {
-    background-color: red;
+    background-color: var(--red);
+}
+
+#exit-button:hover {
+    background-color: var(--red-hover);
 }
 
 .winner-title {
