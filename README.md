@@ -24,7 +24,7 @@ N/A
 
 ## Links
 
-[Source Code](https://github.com/Gatewayss/gage-api-quiz")
+[Source Code](https://github.com/Gatewayss/gage-api-quiz)
 ## Project Status 
 
 The project is currently in development. I am working on the following planned features:
