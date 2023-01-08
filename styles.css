@@ -59,13 +59,14 @@ body {
     var(--main-blue);
     margin-bottom: 15%;
     line-height: 1.5em;
+    text-align: center;
 }
 
 .start-button {
-    margin-top: 1em !important;
+    margin-top: .5em !important;
     width: 100%;
     padding: .8em;
-    margin-bottom: 1em !important;
+    margin-bottom: .5em !important;
     letter-spacing: .1em; 
 }
 
@@ -80,7 +81,7 @@ p[class="timer"] {
 }
 
 .star-icon {
-    vertical-align: .2em !important;
+    vertical-align: .24em !important;
 }
 
 /* text colors */
