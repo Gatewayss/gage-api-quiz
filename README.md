@@ -1,4 +1,12 @@
-# Transgender History Quiz
+<style>
+    .flag {
+        padding-top: 2em;
+        
+    }
+</style>
+
+# Transgender History Quiz <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1200px-Transgender_Pride_flag.svg.png" class="flag" align="right" height="100" width="auto" alt="Transgender Pride flag" />
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
 
 ## Description 
