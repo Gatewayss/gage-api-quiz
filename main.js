@@ -181,7 +181,7 @@ function scorePageDisplay(event) {
     });
         userScores.push({ initials: input.value, score: currentScore });
         let li = document.createElement("li");
-        li.textContent = `initial: ${input.value} score: ${currentScore}`;
+        li.textContent = `Initial: ${input.value} Score: ${currentScore}`;
         localStorage.setItem('user score info:', `initials: ${input.value} score: ${currentScore}`)
         scoreList.appendChild(li);
         event.preventDefault()
@@ -208,28 +208,28 @@ function winnerPage() {
 // questions, options and answers object
 let questionArray = [
     {
-        question: "which TV show has the largest trans cast in history?",
-        options: ["pose", "euphoria", "queer eye", "grey's anatomy "],
-        answer: "pose"
+        question: "Which TV show has the largest trans cast in history?",
+        options: ["Pose", "Euphoria", "Queer Eye", "Grey's Anatomy"],
+        answer: "Pose"
     },
     {
-        question: "who designed the first transgender pride flag?",
-        options: ["sylvia rivera", "miss major griffin-gracy", "caroline cossey", "monica helms",],
-        answer: "monica helms"
+        question: "Who designed the first transgender pride flag?",
+        options: ["Sylvia Rivera", "Miss Major Griffin-Gracy", "Caroline Cossey", "Monica Helms",],
+        answer: "Monica Helms"
     },
     {
-        question: "america’s first transgender statue honors which activists from the Stonewall Riots in 1969?",
-        options: ["marsha p johnson", "sylvia rivera", "stormé deLarverie", "marsha p johnson and sylvia rivera"],
-        answer: "marsha p johnson and sylvia rivera"
+        question: "America’s first transgender statue honors which activists from the Stonewall Riots in 1969?",
+        options: ["Marsha P Johnson", "Sylvia Rivera", "Stormé DeLarverie", "Marsha P Johnson and Sylvia Rivera"],
+        answer: "Marsha P Johnson and Sylvia Rivera"
     },
     {
-        question: "which city in the united states was the first to pass trans-inclusive legislation?",
-        options: ["minneapolis", "san francisco", "portland", "miami"],
-        answer: "minneapolis"
+        question: "Which city in the united states was the first to pass trans-inclusive legislation?",
+        options: ["Minneapolis", "San Francisco", "Portland", "Miami"],
+        answer: "Minneapolis"
     },
     {
-        question: "which transgender man pioneered the use of x-ray photography to detect tuberculosis?",
-        options: ["lou Sullivan", "elliot page", "alan hart", "billy tipton"],
-        answer: "alan hart"
+        question: "Which transgender man pioneered the use of x-ray photography to detect tuberculosis?",
+        options: ["Lou Sullivan", "Elliot Page", "Alan Hart", "Billy Tipton"],
+        answer: "Alan Hart"
     }
 ];
