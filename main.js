@@ -55,6 +55,7 @@ backBtn.addEventListener("click", () => {
 exitBtn.addEventListener("click", () => {
     currentScore = 0;
     score.textContent = currentScore;
+    timer.style.color = '#fff';
     currentQuestionIndex = 0;
     counterBegun = false;
     $('#loser-container').toggleClass('hidden')
