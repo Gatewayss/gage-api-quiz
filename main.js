@@ -15,9 +15,7 @@ const input = document.querySelector("input")
 const scoreList = document.getElementById("score-list")
 const audio = document.querySelector('audio')
 const questionButtons = [btn1, btn2, btn3, btn4]
-
 let test = document.querySelectorAll('button')
-    console.log(test);
 
 let userScores = [];
 let newQuestion;
@@ -71,7 +69,6 @@ test.forEach(btn => {
 
   function playSound() {
     audio.play();
-    console.log("hi");
   }
 
   test.forEach(btn => {
@@ -98,7 +95,11 @@ function startQuiz() {
 idx increments by 1 and is added to the current button 
 so that each button is updated to the current question */
 function renderQuestion() {
-    if (currentQuestionIndex === 5) {
+    if (currentQuestionIndex === 5 && currentScore === 0) {
+        $('#quiz').toggleClass('hidden')
+        $('div#winner-container').toggleClass('hidden')
+        userLost()
+    } if (currentQuestionIndex === 5) {
         winnerPage()
         return userWon = true
     } else {
@@ -117,13 +118,12 @@ function renderQuestion() {
             questionButtons.forEach(btn => btn.classList.remove("wrong-answer"));
         })
         return newQuestion
-    }
+    };
 };
 
 // check answer, add points, subtract time and changes color if true or false
 function answerCheck(event) {
     correct = newQuestion.answer
-    console.log(correct);
     if (event.target.textContent === correct) {
         currentScore++
         event.target.classList.add("correct-answer")
