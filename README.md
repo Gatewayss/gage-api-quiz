@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://shields.io/)
 
-## Description 
+## Introduction 
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Transgender_Pride_flag.svg/1200px-Transgender_Pride_flag.svg.png" align="right" height="100" width="auto" alt="Transgender Pride flag" />
 
 Welcome to the transgender history quiz! Unfortunately, transgender history is often overlooked and underrepresented due to discrimination and stigma. That's why I created this quiz - to share some of the impactful figures and events that transgender people have led and to help raise awareness about the rich and diverse history of the transgender community.
