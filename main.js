@@ -31,7 +31,7 @@ startBtn.addEventListener("click", startQuiz);
 // submit button
 submitBtn.addEventListener('click', scorePageDisplay);
 
-// renders a click event for each answer button so they can be checked   
+// renders a click event for each answer button to be checked if the chosen button is the correct answer or not  
 questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 
 // quit button restarts application
@@ -51,7 +51,7 @@ backBtn.addEventListener("click", () => {
     renderQuestion()
 });
 
-// exit button restarts application
+// exit button restarts application without reloading the browser 
 exitBtn.addEventListener("click", () => {
     currentScore = 0;
     score.textContent = currentScore;
@@ -61,6 +61,7 @@ exitBtn.addEventListener("click", () => {
     $('#homepage').toggleClass('hidden')
 });
 
+// plays and stops the button sound 
 allButtons.forEach(btn => {
     btn.addEventListener("mouseover", playSound);
   });
@@ -78,7 +79,7 @@ allButtons.forEach(btn => {
     audio.currentTime = 0;
   }
 
-// start quiz function 
+// starts the counter and renders the first question 
 function startQuiz() {
     counterBegun = true;
     if (counterBegun === true) {
@@ -89,9 +90,10 @@ function startQuiz() {
     renderQuestion()
 };
 
-/* new question takes the current question index,
-idx increments by 1 and is added to the current button 
-so that each button is updated to the current question */
+/* if the user hasn't won or lose a question will render, 
+it sets the text of the quiz question element to the text of the current question,
+along with the choices and or options of the current question, 
+while refreshing the colors once a new question is rendered */
 function renderQuestion() {
     if (currentQuestionIndex === 5 && currentScore === 0) {
         $('#quiz-container').toggleClass('hidden')
@@ -102,7 +104,7 @@ function renderQuestion() {
         return userWon = true
     } else {
         restartCorrectAnswer()
-        newQuestion = questionArray[currentQuestionIndex]
+        newQuestion = questionObj[currentQuestionIndex]
         quizQuestion.textContent = newQuestion.question
         let idx = 1;
         let curButton;
@@ -119,7 +121,7 @@ function renderQuestion() {
     };
 };
 
-// check answer, add points, subtract time and changes color if true or false
+// check answer, add points, subtract time and changes colors if true or false
 function answerCheck(event) {
     correct = newQuestion.answer
     if (event.target.textContent === correct) {
@@ -139,7 +141,7 @@ function restartCorrectAnswer() {
     questionButtons.forEach(btn => btn.disabled = false);
 };
 
-// counter function 
+// timer function 
 function quizTimer() {
     currentTime = 60
     let timeLeft = setInterval(function () {
@@ -168,8 +170,7 @@ function quizTimer() {
     }, 1000);
 };
 
-/* score page display where new quit button is rendered 
-and local storage is saved and display */
+/* score page displays the user info and saves it to local storage */
 function scorePageDisplay(event) {
     $('#winner-container').toggleClass('hidden')
     $('.score-container').toggleClass('hidden')
@@ -204,7 +205,7 @@ function userWonDisplay() {
 };
 
 // questions, options and answers object
-let questionArray = [
+let questionObj = [
     {
         question: "Which TV show has the largest trans cast in history?",
         options: ["Pose", "Euphoria", "Queer Eye", "Grey's Anatomy"],
