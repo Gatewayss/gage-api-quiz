@@ -11,11 +11,11 @@ Welcome to the transgender history quiz! Unfortunately, transgender history is o
 
 To begin the quiz it's simple! By clicking the start button the first set of questions will appear and the timer will start. You will be given one point for each correct answer and subtracted ten seconds from the timer for each wrong answer. To move on to the next question, click the next button. If you want to review a previous question, click the back button. If you need to reset the quiz at any time, click the quit button. 
 
-![start quiz demo](assets/readme%20assets/start%20quiz.gif)
+![Start quiz demo](assets/readme%20assets/Gage's%20Quiz.gif)
 
 After completing the quiz you can add your score and initials to the high score page. This is done by typing in your initials in the text box and clicking submit. You will then be brought to the high score page where your information will be displayed.  
 
-![adding your score demo](assets/readme%20assets/winner.gif)
+![Scoreboard demo](assets/readme%20assets/winner%20page.gif)
 
 If you did not complete the quiz before the timer ran out you will be forced out of the quiz and have the option of starting over. You can take this quiz as many times as you would like! 
 
