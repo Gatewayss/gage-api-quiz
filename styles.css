@@ -70,12 +70,12 @@ body {
     letter-spacing: .1em; 
 }
 
-p[class="score"] {
+.nav-score-text {
     color: var(--main-blue);
     margin-right: 5px;
 }
 
-p[class="timer"] {
+.nav-timer-text {
     color: var(--main-blue);
     margin-left: 5px;
 }
@@ -98,8 +98,7 @@ p[class="timer"] {
 }
 
 /* Quiz section */
-.question {
-    
+#question {
     text-align: center;
     font-size: 1.5em;
 }
@@ -204,7 +203,7 @@ ul li {
     list-style: none;
 }
 
-.score-board {
+.score-container {
     border: 2px solid #dd5c9d;
     padding: 1em;
     box-shadow: 0 0 8px 3px 
@@ -212,7 +211,7 @@ ul li {
     margin-bottom: 4em;
 }
 
-.score-board h2 {
+.score-container h2 {
     margin-top: .8em;
 }
 
@@ -278,29 +277,29 @@ button[type="submit"] {
     .quiz {
         margin-top: 2em;
     }
-    .score {
+    .nav-score-text {
         text-align: center; 
     }
-    .timer {
+    .nav-timer-text {
         text-align: center;
     }
-    .move {
+    .block-display {
         width: 100%;
     }
 }
 
 /* change navbar items colors */
 @media only screen and (max-width: 859px) {
-    .move {
+    .block-display {
         display: block;
     }
     .header-container {
         margin-bottom: 15%;
     }
-    p[class="timer"] {
+    .nav-timer-text {
         color: var(--white);
     }   
-    p[class="score"] {
+    .nav-score-text {
         color: var(--white); 
     }
     .blue-text {
@@ -316,16 +315,16 @@ button[type="submit"] {
     h1 {
         font-size: 15px; 
     }
-    .quiz-container {
+    #quiz-container {
         margin-top: none;
     }
-    .score {
+    .nav-score-text {
         font-size: 10px;
     }
-    .timer {
+    .nav-timer-text {
         font-size: 10px;
     }
-    .score-board {
+    .score-container {
         margin-top: 0;
     }
 }

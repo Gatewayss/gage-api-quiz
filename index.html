@@ -18,9 +18,9 @@
     <!--Header with title, score and timer-->
     <div class="container header-container container-fluid">
         <div class="fixed-top header-content border-bottom border-info">
-            <p class="score">Score: <span id="score">0</span></p>
-            <h1 class="move pink-text blue-text">TRANS <span class="move white-text">HISTORY</span> <span class="move pink-text">QUIZ</span></h1>
-            <p class="timer">Timer: <span id="counter">0</span></p>
+            <p class="nav-score-text">Score: <span id="score">0</span></p>
+            <h1 class="block-display pink-text blue-text">TRANS <span class="block-display white-text">HISTORY</span> <span class="block-display pink-text">QUIZ</span></h1>
+            <p class="nav-timer-text">Timer: <span id="timer">0</span></p>
         </div>
 
     <!--button audio-->
@@ -28,14 +28,14 @@
         <audio preload="none" src="./assets/audio/rclick-13693.mp3"></audio>
     </div>
     <!-- start page -->
-    <div class="rules-container border border-info p-3  border-opacity-75 visible" id="welcomeBox">
+    <div class="rules-container border border-info p-3 border-opacity-75 visible" id="homepage">
         <p><span class="blue-text">Hello, this is a timed quiz on transgender history.</span><br><span class="pink-text"> You will have sixty seconds to complete this quiz.<br></span> The quiz is five questions and multiple choice.<br></span> Ten seconds will be subtracted from the timer every time you answer incorrectly.<br><span class="pink-text"> Once completing the quiz you can record your new score on the high score section.</span><br><span class="blue-text"> Press start to begin and quit to exit.<br><i class="bi bi-star-fill star-icon"></i> Good luck <i class="bi bi-star-fill star-icon"></i></span></p>
         <button type="button" class="start-button button-style">START</button>
     </div>
 
     <!--Quiz section-->
-        <div class="list-group quiz hidden" id="quiz">
-        <p class="question" id="question">question</p>
+        <div class="list-group quiz hidden" id="quiz-container">
+        <p id="question">question</p>
             <div class="btn-group-vertical" role="group">
                 <button type="button" class="answers-buttons button-style" id="btn1"></button>
                 <button type="button" class="answers-buttons button-style" id="btn2"></button>
@@ -43,16 +43,15 @@
                 <button type="button" class="answers-buttons button-style" id="btn4"></button>
               </div>
               
-              <div class="btn-group nav-container" role="group" aria-label="Basic example" id="nav-container">
+              <div class="btn-group nav-container" role="group" id="nav-container">
                 <button type="button" class="nav-buttons" id="back-button">BACK</button>
                 <button type="button" class="nav-buttons" id="quit-button">QUIT</button>
-                <button type="button" class="nav-buttons"
-                id="next-button">NEXT</button>
+                <button type="button" class="nav-buttons" id="next-button">NEXT</button>
               </div>
             </div>
 
         <!--user lost section-->
-        <div class="game-ending hidden" id="loser">
+        <div class="game-ending hidden" id="loser-container">
             <h2 class="lost-title">YOU LOST!</h2>
             <p class="loser-text">Click the quit button to try again!</p>
             <img class="skull" src="./assets/gifs/skull.gif" alt="human skull rotating" />
@@ -62,7 +61,7 @@
         <!--user won section-->
         <div class="game-ending hidden" id="winner-container">
             <h2 class="winner-title">YOU WON!</h2>
-            <p class="winner-score-text">Your score is <span id="score2">0</span></p>
+            <p class="winner-score-text">Your score is <span id="final-score">0</span></p>
             <p class="winner-text">Add your initials below!</p>
             <img class="hot-dog" src="./assets/gifs/hotdog.gif" alt="hot dog trophy from archie comics"></img>
             <form id="score-form" class="game-ending">
@@ -72,7 +71,7 @@
         </div>
         <!--score board page-->
         <div>
-            <div class="score-board hidden">
+            <div class="score-container hidden">
                 <h2>High Score:</h2>
                     <ul class="loser-text" id="score-list">
                     </ul>

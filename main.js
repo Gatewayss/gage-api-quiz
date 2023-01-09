@@ -1,21 +1,19 @@
 const startBtn = document.querySelector("button")
-const welcomeBox = document.getElementById("welcomeBox")
-const quiz = document.getElementById("quiz")
-const counter = document.getElementById("counter")
-const loser = document.getElementById("loser")
+const homepage = document.getElementById("homepage")
+const timer = document.getElementById("timer")
 const quitBtn = document.getElementById("quit-button")
-const question = document.getElementById("question")
+const quizQuestion = document.getElementById("question")
 const exitBtn = document.getElementById("exit-button")
 const nextBtn = document.getElementById("next-button")
 const score = document.getElementById("score")
-const score2 = document.getElementById("score2")
+const finalScore = document.getElementById("final-score")
 const backBtn = document.getElementById("back-button")
 const submitBtn = document.getElementById("submit")
 const input = document.querySelector("input")
 const scoreList = document.getElementById("score-list")
 const audio = document.querySelector('audio')
 const questionButtons = [btn1, btn2, btn3, btn4]
-let test = document.querySelectorAll('button')
+const allButtons = document.querySelectorAll('button')
 
 let userScores = [];
 let newQuestion;
@@ -23,7 +21,7 @@ let correct;
 let currentScore = 0;
 let counterBegun;
 let timeLeft;
-let count = 0;
+let currentTime = 0;
 let currentQuestionIndex = 0;
 let userWon = false;
 
@@ -59,11 +57,11 @@ exitBtn.addEventListener("click", () => {
     score.textContent = currentScore;
     currentQuestionIndex = 0;
     counterBegun = false;
-    $('#loser').toggleClass('hidden')
-    $('#welcomeBox').toggleClass('hidden')
+    $('#loser-container').toggleClass('hidden')
+    $('#homepage').toggleClass('hidden')
 });
 
-test.forEach(btn => {
+allButtons.forEach(btn => {
     btn.addEventListener("mouseover", playSound);
   });
 
@@ -71,7 +69,7 @@ test.forEach(btn => {
     audio.play();
   }
 
-  test.forEach(btn => {
+  allButtons.forEach(btn => {
     btn.addEventListener("mouseout", stopSound);
   });
   
@@ -84,10 +82,10 @@ test.forEach(btn => {
 function startQuiz() {
     counterBegun = true;
     if (counterBegun === true) {
-        quizCounter()
+        quizTimer()
     }
-    $('#welcomeBox').toggleClass('hidden')
-    $('#quiz').toggleClass('hidden')
+    $('#homepage').toggleClass('hidden')
+    $('#quiz-container').toggleClass('hidden')
     renderQuestion()
 };
 
@@ -96,16 +94,16 @@ idx increments by 1 and is added to the current button
 so that each button is updated to the current question */
 function renderQuestion() {
     if (currentQuestionIndex === 5 && currentScore === 0) {
-        $('#quiz').toggleClass('hidden')
-        $('div#winner-container').toggleClass('hidden')
-        userLost()
+        $('#quiz-container').toggleClass('hidden')
+        $('#winner-container').toggleClass('hidden')
+        userLostDisplay()
     } if (currentQuestionIndex === 5) {
-        winnerPage()
+        userWonDisplay()
         return userWon = true
     } else {
         restartCorrectAnswer()
         newQuestion = questionArray[currentQuestionIndex]
-        question.textContent = newQuestion.question
+        quizQuestion.textContent = newQuestion.question
         let idx = 1;
         let curButton;
         let newButton;
@@ -131,7 +129,7 @@ function answerCheck(event) {
         event.target.disabled = true;
     } else if (event.target.textContent !== correct) {
         event.target.classList.add("wrong-answer")
-        count = count - 10
+        currentTime = currentTime - 10
     }
 
 };
@@ -142,29 +140,29 @@ function restartCorrectAnswer() {
 };
 
 // counter function 
-function quizCounter() {
-    count = 60
+function quizTimer() {
+    currentTime = 60
     let timeLeft = setInterval(function () {
-        count--;
-        counter.textContent = count
-        if (count === 10) {
-            $('span#counter').css('color', 'red')
+        currentTime--;
+        timer.textContent = currentTime 
+        if (currentTime <= 10) {
+            $('#timer').css('color', 'red')
         }
-        if (count <= 0) {
+        if (currentTime  <= 0) {
             clearInterval(timeLeft)
-            counter.textContent = 0;
-            userLost()
+            timer.textContent = 0;
+            userLostDisplay()
         }
         if (counterBegun === false) {
-            counter.textContent = 0;
-            $('#welcomeBox').toggleClass('hidden')
-            $('#quiz').toggleClass('hidden')
+            timer.textContent = 0;
+            $('#homepage').toggleClass('hidden')
+            $('#quiz-container').toggleClass('hidden')
             loser.classList.add("hidden")
             return clearInterval(timeLeft)
         }
         if (userWon) {
-            count = 0;
-            counter.textContent = 0;
+            currentTime = 0;
+            timer.textContent = 0;
             return clearInterval(timeLeft)
         }
     }, 1000);
@@ -173,8 +171,8 @@ function quizCounter() {
 /* score page display where new quit button is rendered 
 and local storage is saved and display */
 function scorePageDisplay(event) {
-    $('div#winner-container').toggleClass('hidden')
-    $('div.score-board').toggleClass('hidden')
+    $('#winner-container').toggleClass('hidden')
+    $('.score-container').toggleClass('hidden')
     let scoreQuitButton = $('.score-board-quit')
     scoreQuitButton.on('click', function () {
         location.reload()
@@ -188,20 +186,20 @@ function scorePageDisplay(event) {
 };
 
 // loser page display  
-function userLost() {
+function userLostDisplay() {
     if (userWon) {
         return;
     } else {
-        $('#quiz').toggleClass('hidden')
-        $('#loser').toggleClass('hidden')
+        $('#quiz-container').toggleClass('hidden')
+        $('#loser-container').toggleClass('hidden')
     }
 };
 
 // winner page display 
-function winnerPage() {
-    score2.textContent = currentScore;
-    $('#quiz').toggleClass('hidden')
-    $('div#winner-container').toggleClass('hidden')
+function userWonDisplay() {
+    finalScore.textContent = currentScore;
+    $('#quiz-container').toggleClass('hidden')
+    $('#winner-container').toggleClass('hidden')
     $('#loser').toggleClass('visible')
 };
 
