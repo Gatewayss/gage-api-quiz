@@ -55,7 +55,7 @@ backBtn.addEventListener("click", () => {
 exitBtn.addEventListener("click", () => {
     currentScore = 0;
     score.textContent = currentScore;
-    $('#timer').removeClass('timer-red')
+    timer.style.color = '#fff';
     currentQuestionIndex = 0;
     counterBegun = false;
     $('#loser-container').toggleClass('hidden')
@@ -149,7 +149,7 @@ function quizTimer() {
         currentTime--;
         timer.textContent = currentTime 
         if (currentTime <= 10) {
-            $('#timer').addClass('timer-red')
+            $('#timer').css('color', 'red')
         }
         if (currentTime  <= 0) {
             clearInterval(timeLeft)

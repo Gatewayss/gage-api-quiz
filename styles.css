@@ -258,17 +258,13 @@ button[type="submit"] {
     margin-bottom: 1.5em;
 }
 
-/* classes for displaying, hiding and changing colors in application */
+/* css for display and hiding pages */
 .hidden {
     display: none;
   }
 
 .visible {
     visibility: visible;
-}
-
-.timer-red {
-    color: var(--red);
 }
 
 /* change navbar header layout to block level */
