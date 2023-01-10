@@ -267,6 +267,10 @@ button[type="submit"] {
     visibility: visible;
 }
 
+.timer-red {
+    color: var(--red);
+}
+
 /* change navbar header layout to block level */
 @media only screen and (max-width: 947px) {
     h1 {
