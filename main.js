@@ -36,7 +36,9 @@ questionButtons.forEach(btn => btn.addEventListener("click", answerCheck));
 
 // quit button restarts application
 quitBtn.addEventListener("click", () => {
-    location.reload()
+    setTimeout(function() {
+        window.location.reload();
+     }, 200);
 });
 
 // next button
@@ -62,22 +64,13 @@ exitBtn.addEventListener("click", () => {
     $('#homepage').toggleClass('hidden')
 });
 
-// plays and stops the button sound 
+// plays the button clicks sound 
 allButtons.forEach(btn => {
-    btn.addEventListener("mouseover", playSound);
+    btn.addEventListener("click", playSound);
   });
 
   function playSound() {
     audio.play();
-  }
-
-  allButtons.forEach(btn => {
-    btn.addEventListener("mouseout", stopSound);
-  });
-  
-  function stopSound() {
-    audio.pause();
-    audio.currentTime = 0;
   }
 
 // starts the counter and renders the first question 
